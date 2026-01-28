@@ -715,55 +715,207 @@
                 </div>
             </section>
 
-            <!-- 課程內容 -->
+            <!--課程內容 -->
             <section id="lessons" class="tab-content">
                 <div class="card">
-                    <h2>📖 Leçon 1 - 自我介紹</h2>
+                    <h2>📖 課程內容 (Leçons)</h2>
 
-                    <h3>基本招呼語</h3>
-                    <ul>
-                        <li><strong>Bonjour</strong> - 你好（白天）</li>
-                        <li><strong>Bonsoir</strong> - 晚上好</li>
-                        <li><strong>Salut</strong> - 嗨（非正式）</li>
-                        <li><strong>Au revoir</strong> - 再見</li>
-                        <li><strong>À bientôt</strong> - 待會見</li>
-                        <li><strong>Bonne journée</strong> - 祝你有美好的一天</li>
-                        <li><strong>Bonne soirée</strong> - 祝你有美好的夜晚</li>
-                    </ul>
-
-                    <h3 style="margin-top: 30px;">自我介紹句型</h3>
-                    <div class="example-sentence">
-                        <strong>Je m'appelle Yachi.</strong>
-                        <span>我叫 Yachi。</span>
-                    </div>
-                    <div class="example-sentence">
-                        <strong>Je suis taiwanaise.</strong>
-                        <span>我是台灣人。</span>
-                    </div>
-                    <div class="example-sentence">
-                        <strong>J'ai 31 ans.</strong>
-                        <span>我31歲。</span>
+                    <!-- 子標籤導航 -->
+                    <div class="sub-nav">
+                        <button class="sub-btn active" data-subtab="lesson1">Leçon 1</button>
+                        <button class="sub-btn" data-subtab="lesson3">Leçon 3</button>
                     </div>
 
-                    <h3 style="margin-top: 30px;">範例人物</h3>
-                    <div class="grid">
-                        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
-                            <h4>Roberto</h4>
-                            <p>Je m'appelle Roberto.</p>
-                            <p>Je suis italien.</p>
-                            <p>Je suis étudiant.</p>
+                    <!-- Leçon 1 -->
+                    <div id="lesson1" class="sub-content active">
+                        <h3>Leçon 1 - 自我介紹</h3>
+
+                        <h4>基本招呼語</h4>
+                        <ul>
+                            <li><strong>Bonjour</strong> - 你好（白天）</li>
+                            <li><strong>Bonsoir</strong> - 晚上好</li>
+                            <li><strong>Salut</strong> - 嗨（非正式）</li>
+                            <li><strong>Au revoir</strong> - 再見</li>
+                            <li><strong>À bientôt</strong> - 待會見</li>
+                            <li><strong>Bonne journée</strong> - 祝你有美好的一天</li>
+                            <li><strong>Bonne soirée</strong> - 祝你有美好的夜晚</li>
+                        </ul>
+
+                        <h4 style="margin-top: 30px;">自我介紹句型</h4>
+                        <div class="example-sentence">
+                            <strong>Je m'appelle Yachi.</strong>
+                            <span>我叫 Yachi。</span>
                         </div>
-                        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
-                            <h4>Yoko</h4>
-                            <p>Je m'appelle Yoko.</p>
-                            <p>Je suis japonaise.</p>
-                            <p>Je suis professeur.</p>
+                        <div class="example-sentence">
+                            <strong>Je suis taiwanaise.</strong>
+                            <span>我是台灣人。</span>
                         </div>
-                        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
-                            <h4>Sven</h4>
-                            <p>Je m'appelle Sven.</p>
-                            <p>Je suis suédois.</p>
-                            <p>Je suis ingénieur.</p>
+                        <div class="example-sentence">
+                            <strong>J'ai 31 ans.</strong>
+                            <span>我31歲。</span>
+                        </div>
+
+                        <h4 style="margin-top: 30px;">範例人物</h4>
+                        <div class="grid">
+                            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
+                                <h4>Roberto</h4>
+                                <p>Je m'appelle Roberto.</p>
+                                <p>Je suis italien.</p>
+                                <p>Je suis étudiant.</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
+                                <h4>Yoko</h4>
+                                <p>Je m'appelle Yoko.</p>
+                                <p>Je suis japonaise.</p>
+                                <p>Je suis professeur.</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
+                                <h4>Sven</h4>
+                                <p>Je m'appelle Sven.</p>
+                                <p>Je suis suédois.</p>
+                                <p>Je suis ingénieur.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leçon 3 -->
+                    <div id="lesson3" class="sub-content">
+                        <h3>Leçon 3 - 自我介紹(進階) & 動詞變化</h3>
+
+                        <h4>對話練習</h4>
+                        <div class="example-sentence">
+                            <strong>Bonjour, je m'appelle Anna, je suis Canadienne, et vous? Vous êtes?</strong>
+                            <span>您好！我叫 Anna，我是加拿大人，您呢？您是？</span>
+                        </div>
+                        <div class="example-sentence">
+                            <strong>Bonjour! Je m'appelle Yoko, je suis Japonaise, enchantée.</strong>
+                            <span>您好！我是 Yoko，我是日本人，很高興認識您</span>
+                        </div>
+                        <div class="example-sentence">
+                            <strong>Je m'appelle José, je suis portugais.</strong>
+                            <span>我的名字是 José，我是葡萄牙人</span>
+                        </div>
+
+                        <h4 style="margin-top: 30px;">閱讀文章 - Roberto Sanchez (23歲，墨西哥人)</h4>
+                        <div
+                            style="background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 15px; margin: 20px 0;">
+                            <p style="margin-bottom: 15px;">
+                                <strong>Je suis mexicain, j'ai 23 ans.</strong><br>
+                                我是墨西哥人，我23歲。
+                            </p>
+                            <p style="margin-bottom: 15px;">
+                                <strong>J'étudie le commerce international et, le samedi, j'apprends le chinois dans une
+                                    école de langues.</strong><br>
+                                我學習國際商業，而且星期六我在一所語言學校學習中文。
+                            </p>
+                            <p style="margin-bottom: 15px;">
+                                <strong>Je suis bilingue : je parle espagnol et français.</strong><br>
+                                我是雙語者：我說西班牙文和法文。
+                            </p>
+                            <p>
+                                <strong>Je ne parle pas bien anglais.</strong><br>
+                                我英文說得不好。
+                            </p>
+                        </div>
+
+                        <h4>重要詞彙</h4>
+                        <div class="grid">
+                            <div>
+                                <ul>
+                                    <li><strong>dans</strong> - 在...裡面</li>
+                                    <li><strong>une école de langues</strong> - 語言學校</li>
+                                    <li><strong>tous les jours</strong> - 每天</li>
+                                    <li><strong>un cours</strong> - 課程</li>
+                                    <li><strong>le matin</strong> - 早上</li>
+                                    <li><strong>le midi</strong> - 中午</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li><strong>l'après-midi</strong> - 下午</li>
+                                    <li><strong>le soir</strong> - 晚上</li>
+                                    <li><strong>travailler</strong> - 工作(動詞)</li>
+                                    <li><strong>chercher</strong> - 尋找(動詞)</li>
+                                    <li><strong>pour</strong> - 為了</li>
+                                    <li><strong>en + 語言</strong> - 用...語言</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h4 style="margin-top: 30px;">📝 第一組動詞變化（-er結尾）</h4>
+                        <div
+                            style="background: rgba(139, 92, 246, 0.1); padding: 20px; border-radius: 15px; margin: 15px 0;">
+                            <h5 style="color: var(--primary);">travailler (工作)</h5>
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td>je travaille</td>
+                                    <td>我工作</td>
+                                </tr>
+                                <tr>
+                                    <td>tu travailles</td>
+                                    <td>你工作</td>
+                                </tr>
+                                <tr>
+                                    <td>il/elle travaille</td>
+                                    <td>他/她工作</td>
+                                </tr>
+                                <tr>
+                                    <td>nous travaillons</td>
+                                    <td>我們工作</td>
+                                </tr>
+                                <tr>
+                                    <td>vous travaillez</td>
+                                    <td>您/你們工作</td>
+                                </tr>
+                                <tr>
+                                    <td>ils/elles travaillent</td>
+                                    <td>他們/她們工作</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div style="background: rgba(236, 72, 153, 0.1); padding: 20px; border-radius: 15px;">
+                            <h5 style="color: var(--secondary);">étudier (學習)</h5>
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td>j'étudie</td>
+                                    <td>我學習</td>
+                                </tr>
+                                <tr>
+                                    <td>tu étudies</td>
+                                    <td>你學習</td>
+                                </tr>
+                                <tr>
+                                    <td>il/elle étudie</td>
+                                    <td>他/她學習</td>
+                                </tr>
+                                <tr>
+                                    <td>nous étudions</td>
+                                    <td>我們學習</td>
+                                </tr>
+                                <tr>
+                                    <td>vous étudiez</td>
+                                    <td>您/你們學習</td>
+                                </tr>
+                                <tr>
+                                    <td>ils/elles étudient</td>
+                                    <td>他們/她們學習</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <h4 style="margin-top: 30px;">練習句子</h4>
+                        <div class="example-sentence">
+                            <strong>J'apprends le français le mercredi soir sur Internet.</strong>
+                            <span>我每週三晚上在網絡上學習法文。</span>
+                        </div>
+                        <div class="example-sentence">
+                            <strong>Nous ne travaillons pas le week-end.</strong>
+                            <span>我們週末不工作。</span>
+                        </div>
+                        <div class="example-sentence">
+                            <strong>Ils ont des cours le jeudi matin.</strong>
+                            <span>他們每週四早上有課。</span>
                         </div>
                     </div>
                 </div>
