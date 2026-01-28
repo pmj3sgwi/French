@@ -43,9 +43,11 @@
 
         header h1 {
             font-size: 3rem;
+            margin: 0;
             background: linear-gradient(135deg, #a78bfa, #f472b6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-weight: 900;
         }
 
@@ -54,7 +56,7 @@
             gap: 12px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             position: sticky;
             top: 20px;
             z-index: 1000;
@@ -68,7 +70,7 @@
             padding: 14px 28px;
             border-radius: 16px;
             cursor: pointer;
-            transition: all 0.4s;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             font-size: 0.95rem;
             font-weight: 600;
         }
@@ -76,35 +78,9 @@
         .nav-btn.active,
         .nav-btn:hover {
             background: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
-        }
-
-        .sub-nav {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-            padding: 10px;
-        }
-
-        .sub-btn {
-            background: rgba(139, 92, 246, 0.2);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            color: #a78bfa;
-            padding: 8px 20px;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.85rem;
-        }
-
-        .sub-btn.active,
-        .sub-btn:hover {
-            background: rgba(139, 92, 246, 0.4);
             border-color: var(--primary);
-            color: #fff;
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+            transform: translateY(-3px);
         }
 
         .tab-content {
@@ -113,30 +89,10 @@
 
         .tab-content.active {
             display: block;
-            animation: slideIn 0.7s;
+            animation: slideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .sub-content {
-            display: none;
-        }
-
-        .sub-content.active {
-            display: block;
-            animation: slideIn 0.5s;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
+        .glass,
         .card {
             background: var(--glass);
             backdrop-filter: blur(20px);
@@ -145,6 +101,12 @@
             border-radius: 32px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             margin-bottom: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         h2 {
@@ -158,105 +120,33 @@
             margin: 20px 0 15px;
         }
 
-        table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0 8px;
-            margin: 20px 0;
+        h4 {
+            color: #f472b6;
+            margin: 15px 0 10px;
         }
 
-        td {
-            padding: 15px;
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 8px 15px;
+            margin-bottom: 8px;
             background: rgba(255, 255, 255, 0.03);
-            text-align: center;
+            border-radius: 8px;
+            transition: all 0.3s ease;
             cursor: pointer;
-            transition: all 0.3s;
         }
 
-        td:hover {
-            background: rgba(139, 92, 246, 0.2);
-            transform: scale(1.05);
+        li:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
         }
 
-        td:first-child {
-            border-radius: 12px 0 0 12px;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-
-        td:last-child {
-            border-radius: 0 12px 12px 0;
-        }
-
-        .number-rule {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 15px 20px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            border-left: 4px solid var(--accent);
-        }
-
-        .number-rule strong {
+        strong {
             color: var(--primary);
-            font-size: 1.1rem;
-        }
-
-        .speaking {
-            animation: pulse 1s infinite;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.7;
-                transform: scale(0.98);
-            }
-        }
-
-        .nationality-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .nationality-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 25px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .nationality-card:hover {
-            background: rgba(139, 92, 246, 0.2);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
-        }
-
-        .nationality-flag {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .nationality-french {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .nationality-chinese {
-            font-size: 1rem;
-            color: #a78bfa;
+            font-weight: 600;
         }
 
         #vocabSearch {
@@ -288,13 +178,250 @@
             background: rgba(255, 255, 255, 0.05);
             padding: 20px;
             border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
             cursor: pointer;
-            transition: all 0.3s;
         }
 
         .vocab-item:hover {
             background: rgba(255, 255, 255, 0.1);
+            border-color: var(--secondary);
             transform: scale(1.02);
+        }
+
+        .flashcard-container {
+            perspective: 1200px;
+            width: 360px;
+            height: 240px;
+            margin: 40px auto;
+        }
+
+        .flashcard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front,
+        .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 28px;
+            font-weight: 700;
+            font-size: 2rem;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .flashcard-front {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
+        }
+
+        .flashcard-back {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, #ec4899, #f43f5e);
+            box-shadow: 0 15px 35px rgba(236, 72, 153, 0.4);
+        }
+
+        .flashcard-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .ctrl-btn {
+            background: var(--primary);
+            border: none;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.2s;
+        }
+
+        .ctrl-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px var(--primary);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 8px;
+        }
+
+        td {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        td:first-child {
+            border-radius: 12px 0 0 12px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        td:last-child {
+            border-radius: 0 12px 12px 0;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+        }
+
+        .example-sentence {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .example-sentence strong {
+            font-size: 1.1rem;
+        }
+
+        .example-sentence span {
+            color: #a78bfa;
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* 國籍卡片樣式 */
+        .nationality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .nationality-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nationality-card:hover {
+            background: rgba(139, 92, 246, 0.2);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .nationality-flag {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .nationality-french {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .nationality-chinese {
+            font-size: 1rem;
+            color: #a78bfa;
+            display: block;
+        }
+
+        .speaking {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.7;
+                transform: scale(0.98);
+            }
+        }
+
+        /* 子標籤頁樣式 */
+        .sub-nav {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .sub-btn {
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            color: #a78bfa;
+            padding: 8px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .sub-btn.active,
+        .sub-btn:hover {
+            background: rgba(139, 92, 246, 0.4);
+            border-color: var(--primary);
+            color: #fff;
+        }
+
+        .sub-content {
+            display: none;
+        }
+
+        .sub-content.active {
+            display: block;
         }
     </style>
 </head>
@@ -303,69 +430,232 @@
     <div class="app-container">
         <header>
             <h1>📚 法文學習筆記</h1>
-            <p style="color: #a78bfa; margin-top: 10px;">完整版 - 包含數字規則</p>
+            <p style="color: #a78bfa; margin-top: 10px;">完整版 - 基於99頁筆記整理 (含國籍表)</p>
         </header>
 
         <nav>
             <button class="nav-btn active" data-tab="pronunciation">🔊 發音規則</button>
+            <button class="nav-btn" data-tab="lessons">📖 課程內容</button>
             <button class="nav-btn" data-tab="vocabulary">📚 詞彙表</button>
+            <button class="nav-btn" data-tab="verbs">✍️ 動詞變化</button>
             <button class="nav-btn" data-tab="nationality">🌍 國籍</button>
+            <button class="nav-btn" data-tab="flashcards">💡 閃示卡</button>
         </nav>
 
         <main>
             <!-- 發音規則 -->
             <section id="pronunciation" class="tab-content active">
                 <div class="card">
-                    <h2>👄 發音規則</h2>
-                    <h3>基本母音</h3>
-                    <table>
-                        <tr>
-                            <td>a, à, â</td>
-                            <td>[a]</td>
-                            <td onclick="speak('chat')">chat</td>
-                        </tr>
-                        <tr>
-                            <td>e</td>
-                            <td>[ə]</td>
-                            <td onclick="speak('le')">le</td>
-                        </tr>
-                        <tr>
-                            <td>é</td>
-                            <td>[e]</td>
-                            <td onclick="speak('café')">café</td>
-                        </tr>
-                        <tr>
-                            <td>i, î, y</td>
-                            <td>[i]</td>
-                            <td onclick="speak('midi')">midi</td>
-                        </tr>
-                        <tr>
-                            <td>o, ô</td>
-                            <td>[o]</td>
-                            <td onclick="speak('mot')">mot</td>
-                        </tr>
-                        <tr>
-                            <td>u, û</td>
-                            <td>[y]</td>
-                            <td onclick="speak('tu')">tu</td>
-                        </tr>
-                        <tr>
-                            <td>ou</td>
-                            <td>[u]</td>
-                            <td onclick="speak('vous')">vous</td>
-                        </tr>
-                    </table>
+                    <h2>👄 完整發音規則 (Prononciation Complète)</h2>
+
+                    <h3>📌 單母音 (Voyelles simples)</h3>
+                    <div class="grid">
+                        <div>
+                            <ul>
+                                <li><strong>a, à, â</strong> → [a] 如：chat, là, pâte</li>
+                                <li><strong>e</strong> (開音節) → [ə] 如：le, petit</li>
+                                <li><strong>e</strong> (閉音節) → [ɛ] 如：mer, avec</li>
+                                <li><strong>é</strong> → [e] 如：été, café</li>
+                                <li><strong>è, ê, ë</strong> → [ɛ] 如：père, tête, Noël</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><strong>i, î, ï, y</strong> → [i] 如：midi, île, maïs, stylo</li>
+                                <li><strong>o, ô</strong> → [o] 如：mot, hôtel</li>
+                                <li><strong>u, û</strong> → [y] 如：tu, sûr</li>
+                                <li><strong>ou, où</strong> → [u] 如：vous, où</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">🔔 複合母音 (Voyelles composées)</h3>
+                    <ul>
+                        <li><strong>ai, ei</strong> → [ɛ] 如：mais, neige</li>
+                        <li><strong>au, eau</strong> → [o] 如：auto, beau</li>
+                        <li><strong>eu, œu</strong> → [ø]/[œ] 如：peu, cœur</li>
+                        <li><strong>oi</strong> → [wa] 如：moi, trois</li>
+                        <li><strong>ui</strong> → [ɥi] 如：lui, nuit</li>
+                    </ul>
+
+                    <h3 style="margin-top: 30px;">👃 鼻母音 (Voyelles nasales)</h3>
+                    <div class="grid">
+                        <div>
+                            <ul>
+                                <li><strong>an, am, en, em</strong> → [ã] 如：dans, jambe, vent, temps</li>
+                                <li><strong>in, im, ain, aim, ein</strong> → [ɛ̃] 如：vin, impossible, pain, faim, plein
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><strong>on, om</strong> → [ɔ̃] 如：bon, nom</li>
+                                <li><strong>un, um</strong> → [œ̃] 如：un, parfum</li>
+                                <li><strong>⚠️ 注意：</strong>鼻母音後若接n/m則不鼻化，如：bonne [bɔn]</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">🎯 子音發音規則 (Consonnes)</h3>
+                    <div class="grid">
+                        <div>
+                            <h4>C 的發音</h4>
+                            <ul>
+                                <li><strong>c + a/o/u</strong> → [k] 如：café, encore, cube</li>
+                                <li><strong>c + e/i/y</strong> → [s] 如：cinéma, centre</li>
+                                <li><strong>ç</strong> → [s] 如：français, garçon</li>
+                            </ul>
+
+                            <h4>G 的發音</h4>
+                            <ul>
+                                <li><strong>g + a/o/u</strong> → [g] 如：gare, gomme</li>
+                                <li><strong>g + e/i/y</strong> → [ʒ] 如：géographie, gilet</li>
+                                <li><strong>gu + e/i</strong> → [g] 如：guerre, guide</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4>S 的發音</h4>
+                            <ul>
+                                <li><strong>字首或子音後</strong> → [s] 如：sac, aussi</li>
+                                <li><strong>兩個母音間</strong> → [z] 如：rose, maison</li>
+                                <li><strong>ss</strong> → [s] 如：poisson, classe</li>
+                            </ul>
+
+                            <h4>其他重要子音</h4>
+                            <ul>
+                                <li><strong>h</strong> → 不發音 (分h muet和h aspiré)</li>
+                                <li><strong>r</strong> → [ʁ] 小舌顫音 如：Paris</li>
+                                <li><strong>j</strong> → [ʒ] 如：jour, bonjour</li>
+                                <li><strong>w</strong> → [v] 如：wagon</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">🔤 子音組合</h3>
+                    <div class="grid">
+                        <div>
+                            <ul>
+                                <li><strong>ch</strong> → [ʃ] 如：chat, chocolat</li>
+                                <li><strong>ph</strong> → [f] 如：téléphone, photo</li>
+                                <li><strong>gn</strong> → [ɲ] 如：espagnol, montagne</li>
+                                <li><strong>qu</strong> → [k] 如：question, quoi</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><strong>th</strong> → [t] 如：thé, théâtre</li>
+                                <li><strong>ll</strong> → [l] 如：ville (例外：fille [j])</li>
+                                <li><strong>-ill-</strong> → [j] 如：famille, fille</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">📍 字尾發音規則</h3>
+                    <div class="grid">
+                        <div>
+                            <h4>常見字尾</h4>
+                            <ul>
+                                <li><strong>-er, -ez</strong> → [e] 如：parler, allez</li>
+                                <li><strong>-et</strong> → [ɛ] 如：et, secret</li>
+                                <li><strong>-tion</strong> → [sjɔ̃] 如：nation, attention</li>
+                                <li><strong>-sion</strong> → [zjɔ̃] 如：télévision</li>
+                                <li><strong>-eur</strong> → [œʁ] 如：professeur</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>不發音的字尾</h4>
+                            <ul>
+                                <li><strong>-e, -es, -ent</strong> (動詞) 通常不發音</li>
+                                <li><strong>-s, -x, -z, -t, -d, -p</strong> 字尾通常不發音</li>
+                                <li><strong>例外：</strong>CaReFuL 字尾 (c, r, f, l) 通常發音</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">🔗 連音規則</h3>
+                    <ul>
+                        <li><strong>必須連音：</strong>冠詞+名詞 (les enfants [lezɑ̃fɑ̃])</li>
+                        <li><strong>必須連音：</strong>形容詞+名詞 (un petit ami)</li>
+                        <li><strong>必須連音：</strong>代詞+動詞 (vous êtes [vuzɛt])</li>
+                        <li><strong>禁止連音：</strong>et 之後 (et il)</li>
+                        <li><strong>禁止連音：</strong>h aspiré 之前 (les / haricots)</li>
+                    </ul>
+
+                    <h3 style="margin-top: 30px;">❌ 特殊情況與例外</h3>
+                    <ul>
+                        <li><strong>x</strong> → [ks] 如：taxi, boxe</li>
+                        <li><strong>x</strong> → [gz] 如：examen, exemple (ex+母音)</li>
+                        <li><strong>x</strong> → [s] 如：six, dix (數字6, 10)</li>
+                        <li><strong>y</strong> → [i] 當母音 如：stylo</li>
+                        <li><strong>y</strong> → [j] 當半母音 如：yaourt</li>
+                    </ul>
                 </div>
             </section>
 
-            <!-- 詞彙表 with 子標籤 -->
+            <!-- 課程內容 -->
+            <section id="lessons" class="tab-content">
+                <div class="card">
+                    <h2>📖 Leçon 1 - 自我介紹</h2>
+
+                    <h3>基本招呼語</h3>
+                    <ul>
+                        <li><strong>Bonjour</strong> - 你好（白天）</li>
+                        <li><strong>Bonsoir</strong> - 晚上好</li>
+                        <li><strong>Salut</strong> - 嗨（非正式）</li>
+                        <li><strong>Au revoir</strong> - 再見</li>
+                        <li><strong>À bientôt</strong> - 待會見</li>
+                        <li><strong>Bonne journée</strong> - 祝你有美好的一天</li>
+                        <li><strong>Bonne soirée</strong> - 祝你有美好的夜晚</li>
+                    </ul>
+
+                    <h3 style="margin-top: 30px;">自我介紹句型</h3>
+                    <div class="example-sentence">
+                        <strong>Je m'appelle Yachi.</strong>
+                        <span>我叫 Yachi。</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>Je suis taiwanaise.</strong>
+                        <span>我是台灣人。</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>J'ai 31 ans.</strong>
+                        <span>我31歲。</span>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">範例人物</h3>
+                    <div class="grid">
+                        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
+                            <h4>Roberto</h4>
+                            <p>Je m'appelle Roberto.</p>
+                            <p>Je suis italien.</p>
+                            <p>Je suis étudiant.</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
+                            <h4>Yoko</h4>
+                            <p>Je m'appelle Yoko.</p>
+                            <p>Je suis japonaise.</p>
+                            <p>Je suis professeur.</p>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
+                            <h4>Sven</h4>
+                            <p>Je m'appelle Sven.</p>
+                            <p>Je suis suédois.</p>
+                            <p>Je suis ingénieur.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 詞彙表 -->
             <section id="vocabulary" class="tab-content">
                 <div class="card">
                     <h2>📚 詞彙表 (Vocabulaire)</h2>
 
+                    <!-- 子標籤導航 -->
                     <div class="sub-nav">
                         <button class="sub-btn active" data-subtab="vocab-words">常用詞彙</button>
-                        <button class="sub-btn" data-subtab="vocab-numbers">🔢 數字 (Chiffres)</button>
+                        <button class="sub-btn" data-subtab="vocab-numbers">🔢 數字 Chiffres</button>
                     </div>
 
                     <!-- 常用詞彙 -->
@@ -375,95 +665,200 @@
                         <div class="vocab-grid" id="vocabList"></div>
                     </div>
 
-                    <!-- 數字規則 -->
+                    <!-- 數字表 -->
                     <div id="vocab-numbers" class="sub-content">
                         <h3>🔢 完整數字表 (Chiffres)</h3>
                         <p style="color: #a78bfa; margin-bottom: 20px;">點擊數字聽發音</p>
 
-                        <table>
+                        <table style="width: 100%; text-align: center;">
                             <tr>
-                                <td onclick="speak('un')"><strong>1</strong><br>un</td>
-                                <td onclick="speak('onze')"><strong>11</strong><br>onze</td>
-                                <td onclick="speak('vingt et un')"><strong>21</strong><br>vingt et un</td>
-                                <td onclick="speak('trente et un')"><strong>31</strong><br>trente et un</td>
+                                <td onclick="speak('un')" style="cursor: pointer;"><strong>1</strong><br>un</td>
+                                <td onclick="speak('onze')" style="cursor: pointer;"><strong>11</strong><br>onze</td>
+                                <td onclick="speak('vingt et un')" style="cursor: pointer;"><strong>21</strong><br>vingt
+                                    et un</td>
+                                <td onclick="speak('trente et un')" style="cursor: pointer;">
+                                    <strong>31</strong><br>trente et un
+                                </td>
                             </tr>
                             <tr>
-                                <td onclick="speak('deux')"><strong>2</strong><br>deux</td>
-                                <td onclick="speak('douze')"><strong>12</strong><br>douze</td>
-                                <td onclick="speak('vingt-deux')"><strong>22</strong><br>vingt-deux</td>
-                                <td onclick="speak('quarante')"><strong>40</strong><br>quarante</td>
+                                <td onclick="speak('deux')" style="cursor: pointer;"><strong>2</strong><br>deux</td>
+                                <td onclick="speak('douze')" style="cursor: pointer;"><strong>12</strong><br>douze</td>
+                                <td onclick="speak('vingt-deux')" style="cursor: pointer;">
+                                    <strong>22</strong><br>vingt-deux
+                                </td>
+                                <td onclick="speak('quarante')" style="cursor: pointer;"><strong>40</strong><br>quarante
+                                </td>
                             </tr>
                             <tr>
-                                <td onclick="speak('trois')"><strong>3</strong><br>trois</td>
-                                <td onclick="speak('treize')"><strong>13</strong><br>treize</td>
-                                <td onclick="speak('vingt-trois')"><strong>23</strong><br>vingt-trois</td>
-                                <td onclick="speak('cinquante')"><strong>50</strong><br>cinquante</td>
+                                <td onclick="speak('trois')" style="cursor: pointer;"><strong>3</strong><br>trois</td>
+                                <td onclick="speak('treize')" style="cursor: pointer;"><strong>13</strong><br>treize
+                                </td>
+                                <td onclick="speak('vingt-trois')" style="cursor: pointer;">
+                                    <strong>23</strong><br>vingt-trois
+                                </td>
+                                <td onclick="speak('cinquante')" style="cursor: pointer;">
+                                    <strong>50</strong><br>cinquante
+                                </td>
                             </tr>
                             <tr>
-                                <td onclick="speak('quatre')"><strong>4</strong><br>quatre</td>
-                                <td onclick="speak('quatorze')"><strong>14</strong><br>quatorze</td>
-                                <td onclick="speak('vingt-quatre')"><strong>24</strong><br>vingt-quatre</td>
-                                <td onclick="speak('soixante')"><strong>60</strong><br>soixante</td>
+                                <td onclick="speak('quatre')" style="cursor: pointer;"><strong>4</strong><br>quatre</td>
+                                <td onclick="speak('quatorze')" style="cursor: pointer;"><strong>14</strong><br>quatorze
+                                </td>
+                                <td onclick="speak('vingt-quatre')" style="cursor: pointer;">
+                                    <strong>24</strong><br>vingt-quatre
+                                </td>
+                                <td onclick="speak('soixante')" style="cursor: pointer;"><strong>60</strong><br>soixante
+                                </td>
                             </tr>
                             <tr>
-                                <td onclick="speak('cinq')"><strong>5</strong><br>cinq</td>
-                                <td onclick="speak('quinze')"><strong>15</strong><br>quinze</td>
-                                <td onclick="speak('vingt-cinq')"><strong>25</strong><br>vingt-cinq</td>
-                                <td onclick="speak('soixante-dix')"><strong>70</strong><br>soixante-dix</td>
+                                <td onclick="speak('cinq')" style="cursor: pointer;"><strong>5</strong><br>cinq</td>
+                                <td onclick="speak('quinze')" style="cursor: pointer;"><strong>15</strong><br>quinze
+                                </td>
+                                <td onclick="speak('vingt-cinq')" style="cursor: pointer;">
+                                    <strong>25</strong><br>vingt-cinq
+                                </td>
+                                <td onclick="speak('soixante-dix')" style="cursor: pointer;">
+                                    <strong>70</strong><br>soixante-dix
+                                </td>
                             </tr>
                             <tr>
-                                <td onclick="speak('six')"><strong>6</strong><br>six</td>
-                                <td onclick="speak('seize')"><strong>16</strong><br>seize</td>
-                                <td onclick="speak('vingt-six')"><strong>26</strong><br>vingt-six</td>
-                                <td onclick="speak('quatre-vingts')"><strong>80</strong><br>quatre-vingts</td>
+                                <td onclick="speak('six')" style="cursor: pointer;"><strong>6</strong><br>six</td>
+                                <td onclick="speak('seize')" style="cursor: pointer;"><strong>16</strong><br>seize</td>
+                                <td onclick="speak('vingt-six')" style="cursor: pointer;">
+                                    <strong>26</strong><br>vingt-six
+                                </td>
+                                <td onclick="speak('quatre-vingts')" style="cursor: pointer;">
+                                    <strong>80</strong><br>quatre-vingts
+                                </td>
                             </tr>
                             <tr>
-                                <td onclick="speak('sept')"><strong>7</strong><br>sept</td>
-                                <td onclick="speak('dix-sept')"><strong>17</strong><br>dix-sept</td>
-                                <td onclick="speak('vingt-sept')"><strong>27</strong><br>vingt-sept</td>
-                                <td onclick="speak('quatre-vingt-dix')"><strong>90</strong><br>quatre-vingt-dix</td>
+                                <td onclick="speak('sept')" style="cursor: pointer;"><strong>7</strong><br>sept</td>
+                                <td onclick="speak('dix-sept')" style="cursor: pointer;"><strong>17</strong><br>dix-sept
+                                </td>
+                                <td onclick="speak('vingt-sept')" style="cursor: pointer;">
+                                    <strong>27</strong><br>vingt-sept
+                                </td>
+                                <td onclick="speak('quatre-vingt-dix')" style="cursor: pointer;">
+                                    <strong>90</strong><br>quatre-vingt-dix
+                                </td>
                             </tr>
                             <tr>
-                                <td onclick="speak('huit')"><strong>8</strong><br>huit</td>
-                                <td onclick="speak('dix-huit')"><strong>18</strong><br>dix-huit</td>
-                                <td onclick="speak('vingt-huit')"><strong>28</strong><br>vingt-huit</td>
-                                <td onclick="speak('cent')"><strong>100</strong><br>cent</td>
+                                <td onclick="speak('huit')" style="cursor: pointer;"><strong>8</strong><br>huit</td>
+                                <td onclick="speak('dix-huit')" style="cursor: pointer;"><strong>18</strong><br>dix-huit
+                                </td>
+                                <td onclick="speak('vingt-huit')" style="cursor: pointer;">
+                                    <strong>28</strong><br>vingt-huit
+                                </td>
+                                <td onclick="speak('cent')" style="cursor: pointer;"><strong>100</strong><br>cent</td>
                             </tr>
                             <tr>
-                                <td onclick="speak('neuf')"><strong>9</strong><br>neuf</td>
-                                <td onclick="speak('dix-neuf')"><strong>19</strong><br>dix-neuf</td>
-                                <td onclick="speak('vingt-neuf')"><strong>29</strong><br>vingt-neuf</td>
-                                <td onclick="speak('mille')"><strong>1000</strong><br>mille</td>
+                                <td onclick="speak('neuf')" style="cursor: pointer;"><strong>9</strong><br>neuf</td>
+                                <td onclick="speak('dix-neuf')" style="cursor: pointer;"><strong>19</strong><br>dix-neuf
+                                </td>
+                                <td onclick="speak('vingt-neuf')" style="cursor: pointer;">
+                                    <strong>29</strong><br>vingt-neuf
+                                </td>
+                                <td onclick="speak('mille')" style="cursor: pointer;"><strong>1000</strong><br>mille
+                                </td>
                             </tr>
                             <tr>
-                                <td onclick="speak('dix')"><strong>10</strong><br>dix</td>
-                                <td onclick="speak('vingt')"><strong>20</strong><br>vingt</td>
-                                <td onclick="speak('trente')"><strong>30</strong><br>trente</td>
-                                <td onclick="speak('un million')"><strong>1,000,000</strong><br>un million</td>
+                                <td onclick="speak('dix')" style="cursor: pointer;"><strong>10</strong><br>dix</td>
+                                <td onclick="speak('vingt')" style="cursor: pointer;"><strong>20</strong><br>vingt</td>
+                                <td onclick="speak('trente')" style="cursor: pointer;"><strong>30</strong><br>trente
+                                </td>
+                                <td onclick="speak('un million')" style="cursor: pointer;">
+                                    <strong>1,000,000</strong><br>un million
+                                </td>
                             </tr>
                         </table>
 
                         <h3 style="margin-top: 40px;">📐 數字規則說明</h3>
 
-                        <div class="number-rule">
+                        <div class="example-sentence">
                             <strong>21, 31, 41, 51, 61:</strong> 用 "et" 連接<br>
-                            <span style="color: #a78bfa;">• 21: vingt <u>et</u> un</span><br>
-                            <span style="color: #a78bfa;">• 31: trente <u>et</u> un</span><br>
-                            <span style="color: #a78bfa;">• 41: quarante <u>et</u> un</span>
+                            <span>• 21: vingt <u>et</u> un</span><br>
+                            <span>• 31: trente <u>et</u> un</span><br>
+                            <span>• 41: quarante <u>et</u> un</span>
                         </div>
 
-                        <div class="number-rule">
+                        <div class="example-sentence">
                             <strong>71-79:</strong> soixante + (11-19)<br>
-                            <span style="color: #a78bfa;">• 71: soixante <u>et</u> onze (60+11)</span><br>
-                            <span style="color: #a78bfa;">• 72: soixante-douze (60+12)</span>
+                            <span>• 71: soixante <u>et</u> onze (60+11)</span><br>
+                            <span>• 72: soixante-douze (60+12)</span>
                         </div>
 
-                        <div class="number-rule">
+                        <div class="example-sentence">
                             <strong>81-99:</strong> quatre-vingt(s) + 數字<br>
-                            <span style="color: #a78bfa;">• 81: quatre-vingt-un (4×20+1)</span><br>
-                            <span style="color: #a78bfa;">• 91: quatre-vingt-onze (4×20+11)</span><br>
-                            <span style="color: #a78bfa;">• 101: cent un</span>
+                            <span>• 81: quatre-vingt-un (4×20+1)</span><br>
+                            <span>• 91: quatre-vingt-onze (4×20+11)</span><br>
+                            <span>• 101: cent un</span><br>
+                            <span>• 1001: mille un</span>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 動詞變化 -->
+            <section id="verbs" class="tab-content">
+                <div class="grid">
+                    <div class="card">
+                        <h2>être (是)</h2>
+                        <table>
+                            <tr>
+                                <td>je suis</td>
+                                <td>我是</td>
+                            </tr>
+                            <tr>
+                                <td>tu es</td>
+                                <td>你是</td>
+                            </tr>
+                            <tr>
+                                <td>il/elle est</td>
+                                <td>他/她是</td>
+                            </tr>
+                            <tr>
+                                <td>nous sommes</td>
+                                <td>我們是</td>
+                            </tr>
+                            <tr>
+                                <td>vous êtes</td>
+                                <td>您是/你們是</td>
+                            </tr>
+                            <tr>
+                                <td>ils/elles sont</td>
+                                <td>他們/她們是</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h2>avoir (有)</h2>
+                        <table>
+                            <tr>
+                                <td>j'ai</td>
+                                <td>我有</td>
+                            </tr>
+                            <tr>
+                                <td>tu as</td>
+                                <td>你有</td>
+                            </tr>
+                            <tr>
+                                <td>il/elle a</td>
+                                <td>他/她有</td>
+                            </tr>
+                            <tr>
+                                <td>nous avons</td>
+                                <td>我們有</td>
+                            </tr>
+                            <tr>
+                                <td>vous avez</td>
+                                <td>您有/你們有</td>
+                            </tr>
+                            <tr>
+                                <td>ils/elles ont</td>
+                                <td>他們/她們有</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </section>
@@ -473,37 +868,102 @@
                 <div class="card">
                     <h2>🌍 國籍表 (Nationalité)</h2>
                     <p style="color: #a78bfa; margin-bottom: 20px;">點擊卡片聽發音</p>
+
                     <div class="nationality-grid">
                         <div class="nationality-card" onclick="speak('suédois')">
-                            <div class="nationality-flag">🇸🇪</div>
-                            <div class="nationality-french">suédois</div>
-                            <div class="nationality-chinese">瑞典人</div>
+                            <span class="nationality-flag">🇸🇪</span>
+                            <span class="nationality-french">suédois</span>
+                            <span class="nationality-chinese">瑞典人</span>
                         </div>
-                        <div class="nationality-card" onclick="speak('français')">
-                            <div class="nationality-flag">🇫🇷</div>
-                            <div class="nationality-french">français</div>
-                            <div class="nationality-chinese">法國人</div>
+
+                        <div class="nationality-card" onclick="speak('canadien')">
+                            <span class="nationality-flag">🇨🇦</span>
+                            <span class="nationality-french">canadien</span>
+                            <span class="nationality-chinese">加拿大人</span>
                         </div>
-                        <div class="nationality-card" onclick="speak('taiwanais')">
-                            <div class="nationality-flag">🇹🇼</div>
-                            <div class="nationality-french">taiwanais</div>
-                            <div class="nationality-chinese">台灣人</div>
+
+                        <div class="nationality-card" onclick="speak('allemand')">
+                            <span class="nationality-flag">🇩🇪</span>
+                            <span class="nationality-french">allemand</span>
+                            <span class="nationality-chinese">德國人</span>
                         </div>
+
                         <div class="nationality-card" onclick="speak('américain')">
-                            <div class="nationality-flag">🇺🇸</div>
-                            <div class="nationality-french">américain</div>
-                            <div class="nationality-chinese">美國人</div>
+                            <span class="nationality-flag">🇺🇸</span>
+                            <span class="nationality-french">américain</span>
+                            <span class="nationality-chinese">美國人</span>
                         </div>
+
+                        <div class="nationality-card" onclick="speak('français')">
+                            <span class="nationality-flag">🇫🇷</span>
+                            <span class="nationality-french">français</span>
+                            <span class="nationality-chinese">法國人</span>
+                        </div>
+
                         <div class="nationality-card" onclick="speak('japonais')">
-                            <div class="nationality-flag">🇯🇵</div>
-                            <div class="nationality-french">japonais</div>
-                            <div class="nationality-chinese">日本人</div>
+                            <span class="nationality-flag">🇯🇵</span>
+                            <span class="nationality-french">japonais</span>
+                            <span class="nationality-chinese">日本人</span>
                         </div>
+
                         <div class="nationality-card" onclick="speak('chinois')">
-                            <div class="nationality-flag">🇨🇳</div>
-                            <div class="nationality-french">chinois</div>
-                            <div class="nationality-chinese">中國人</div>
+                            <span class="nationality-flag">🇨🇳</span>
+                            <span class="nationality-french">chinois</span>
+                            <span class="nationality-chinese">中國人</span>
                         </div>
+
+                        <div class="nationality-card" onclick="speak('italien')">
+                            <span class="nationality-flag">🇮🇹</span>
+                            <span class="nationality-french">italien</span>
+                            <span class="nationality-chinese">義大利人</span>
+                        </div>
+
+                        <div class="nationality-card" onclick="speak('espagnol')">
+                            <span class="nationality-flag">🇪🇸</span>
+                            <span class="nationality-french">espagnol</span>
+                            <span class="nationality-chinese">西班牙人</span>
+                        </div>
+
+                        <div class="nationality-card" onclick="speak('anglais')">
+                            <span class="nationality-flag">🇬🇧</span>
+                            <span class="nationality-french">anglais</span>
+                            <span class="nationality-chinese">英國人</span>
+                        </div>
+
+                        <div class="nationality-card" onclick="speak('coréen')">
+                            <span class="nationality-flag">🇰🇷</span>
+                            <span class="nationality-french">coréen</span>
+                            <span class="nationality-chinese">韓國人</span>
+                        </div>
+
+                        <div class="nationality-card" onclick="speak('taiwanais')">
+                            <span class="nationality-flag">🇹🇼</span>
+                            <span class="nationality-french">taiwanais</span>
+                            <span class="nationality-chinese">台灣人</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 閃示卡 -->
+            <section id="flashcards" class="tab-content">
+                <div class="card" style="text-align: center;">
+                    <h2>🎴 閃示卡複習</h2>
+                    <p style="color: #a78bfa; margin-bottom: 20px;">點擊卡片翻面</p>
+                    <div class="flashcard-container">
+                        <div class="flashcard" id="card">
+                            <div class="flashcard-front">
+                                <h2 id="card-front-text">Bonjour</h2>
+                            </div>
+                            <div class="flashcard-back">
+                                <h2 id="card-back-text">你好</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flashcard-controls">
+                        <button class="ctrl-btn" id="prevBtn">←</button>
+                        <span id="cardCounter" style="font-size: 1.2rem;">1 / 50</span>
+                        <button class="ctrl-btn" id="nextBtn">→</button>
                     </div>
                 </div>
             </section>
@@ -511,7 +971,90 @@
     </div>
 
     <script>
-        // Tab 切換
+        // 詞彙數據
+        const vocabulary = [
+            { fr: "Bonjour", zh: "你好/早安 (名詞)" },
+            { fr: "Bonsoir", zh: "晚上好 (名詞)" },
+            { fr: "Salut", zh: "嗨/拜拜 (名詞-非正式)" },
+            { fr: "Au revoir", zh: "再見 (片語)" },
+            { fr: "À bientôt", zh: "待會見 (片語)" },
+            { fr: "Bonne journée", zh: "祝你有美好的一天 (片語)" },
+            { fr: "Bonne soirée", zh: "祝你有美好的夜晚 (片語)" },
+            { fr: "oui", zh: "是 (副詞)" },
+            { fr: "non", zh: "不 (副詞)" },
+            { fr: "merci", zh: "謝謝 (名詞)" },
+            { fr: "s'il vous plaît", zh: "請 (片語-正式)" },
+            { fr: "s'il te plaît", zh: "請 (片語-非正式)" },
+            { fr: "pardon", zh: "抱歉 (名詞)" },
+            { fr: "excusez-moi", zh: "對不起 (片語)" },
+            { fr: "je ne comprends pas", zh: "我不懂 (句子)" },
+            { fr: "Je m'appelle", zh: "我叫 (句型)" },
+            { fr: "Je suis", zh: "我是 (句型)" },
+            { fr: "J'ai", zh: "我有 (句型)" },
+            { fr: "un étudiant", zh: "一個學生 (名詞-陽性)" },
+            { fr: "une étudiante", zh: "一個學生 (名詞-陰性)" },
+            { fr: "un professeur", zh: "一個老師 (名詞)" },
+            { fr: "un ingénieur", zh: "一個工程師 (名詞-陽性)" },
+            { fr: "un médecin", zh: "一個醫生 (名詞)" },
+            { fr: "italien", zh: "義大利人 (形容詞-陽性)" },
+            { fr: "italienne", zh: "義大利人 (形容詞-陰性)" },
+            { fr: "japonais", zh: "日本人 (形容詞-陽性)" },
+            { fr: "japonaise", zh: "日本人 (形容詞-陰性)" },
+            { fr: "suédois", zh: "瑞典人 (形容詞-陽性)" },
+            { fr: "suédoise", zh: "瑞典人 (形容詞-陰性)" },
+            { fr: "zéro", zh: "0 (數字)" },
+            { fr: "un", zh: "1 (數字-陽性)" },
+            { fr: "une", zh: "1 (數字-陰性)" },
+            { fr: "deux", zh: "2 (數字)" },
+            { fr: "trois", zh: "3 (數字)" },
+            { fr: "quatre", zh: "4 (數字)" },
+            { fr: "cinq", zh: "5 (數字)" },
+            { fr: "six", zh: "6 (數字)" },
+            { fr: "sept", zh: "7 (數字)" },
+            { fr: "huit", zh: "8 (數字)" },
+            { fr: "neuf", zh: "9 (數字)" },
+            { fr: "dix", zh: "10 (數字)" },
+            { fr: "onze", zh: "11 (數字)" },
+            { fr: "douze", zh: "12 (數字)" },
+            { fr: "treize", zh: "13 (數字)" },
+            { fr: "quatorze", zh: "14 (數字)" },
+            { fr: "quinze", zh: "15 (數字)" },
+            { fr: "seize", zh: "16 (數字)" },
+            { fr: "dix-sept", zh: "17 (數字)" },
+            { fr: "dix-huit", zh: "18 (數字)" },
+            { fr: "dix-neuf", zh: "19 (數字)" },
+            { fr: "vingt", zh: "20 (數字)" },
+        ];
+
+        // 語音合成發音功能
+        function speak(text) {
+            window.speechSynthesis.cancel();
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            utterance.rate = 0.8;
+
+            const voices = window.speechSynthesis.getVoices();
+            const frenchVoice = voices.find(v => v.lang.startsWith('fr'));
+            if (frenchVoice) {
+                utterance.voice = frenchVoice;
+            }
+
+            const element = event.currentTarget || event.target;
+            if (element && element.classList) {
+                element.classList.add('speaking');
+                utterance.onend = () => element.classList.remove('speaking');
+            }
+
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // 確保語音列表已載入
+        if (window.speechSynthesis.onvoiceschanged !== undefined) {
+            window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+        }
+
+        // Tab切換
         document.querySelectorAll('.nav-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
@@ -521,7 +1064,7 @@
             });
         });
 
-        // Sub-Tab 切換
+        // 子Tab切換
         document.querySelectorAll('.sub-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.sub-btn').forEach(b => b.classList.remove('active'));
@@ -531,19 +1074,7 @@
             });
         });
 
-        // 詞彙數據
-        const vocabulary = [
-            { fr: "Bonjour", zh: "你好/早安" },
-            { fr: "Bonsoir", zh: "晚上好" },
-            { fr: "Au revoir", zh: "再見" },
-            { fr: "Merci", zh: "謝謝" },
-            { fr: "Oui", zh: "是" },
-            { fr: "Non", zh: "不" },
-            { fr: "S'il vous plaît", zh: "請（正式）" },
-            { fr: "Pardon", zh: "對不起" },
-        ];
-
-        // 渲染詞彙
+        // 詞彙表渲染
         const vocabList = document.getElementById('vocabList');
         const renderVocab = (filter = '') => {
             vocabList.innerHTML = vocabulary
@@ -554,23 +1085,35 @@
         renderVocab();
         document.getElementById('vocabSearch').addEventListener('input', (e) => renderVocab(e.target.value));
 
-        // 語音功能
-        function speak(text) {
-            window.speechSynthesis.cancel();
-            const u = new SpeechSynthesisUtterance(text);
-            u.lang = 'fr-FR';
-            u.rate = 0.8;
-            const element = event.currentTarget;
-            if (element) {
-                element.classList.add('speaking');
-                u.onend = () => element.classList.remove('speaking');
-            }
-            window.speechSynthesis.speak(u);
-        }
+        // 閃示卡
+        let currentCard = 0;
+        const card = document.getElementById('card');
+        const front = document.getElementById('card-front-text');
+        const back = document.getElementById('card-back-text');
+        const counter = document.getElementById('cardCounter');
 
-        if (window.speechSynthesis.onvoiceschanged !== undefined) {
-            window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
-        }
+        const updateCard = () => {
+            card.classList.remove('flipped');
+            setTimeout(() => {
+                front.innerText = vocabulary[currentCard].fr;
+                back.innerText = vocabulary[currentCard].zh;
+                counter.innerText = `${currentCard + 1} / ${vocabulary.length}`;
+            }, 150);
+        };
+
+        card.addEventListener('click', () => card.classList.toggle('flipped'));
+        document.getElementById('prevBtn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentCard = (currentCard - 1 + vocabulary.length) % vocabulary.length;
+            updateCard();
+        });
+        document.getElementById('nextBtn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentCard = (currentCard + 1) % vocabulary.length;
+            updateCard();
+        });
+
+        updateCard();
     </script>
 </body>
 
