@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法文學習筆記 - 2026最新完整版</title>
+    <style>
+        :root {
+            --primary: #8b5cf6;
+            --secondary: #ec4899;
+            --accent: #10b981;
+            --bg: #0f172a;
+            --glass: rgba(30, 41, 59, 0.75);
+            --text: #f8fafc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Microsoft JhengHei', 'Segoe UI', sans-serif;
+            background: radial-gradient(circle at 0% 0%, #1e1b4b 0%, #0f172a 100%);
+            color: var(--text);
+            min-height: 100vh;
+            padding-bottom: 50px;
+            line-height: 1.6;
+        }
+
+        .app-container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        header { text-align: center; padding: 60px 0 30px; }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            background: linear-gradient(135deg, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+        }
+
+        nav {
+            display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px;
+            position: sticky; top: 20px; z-index: 1000;
+        }
+
+        .nav-btn {
+            background: var(--glass); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff; padding: 14px 28px; border-radius: 16px; cursor: pointer; transition: all 0.4s;
+            font-weight: 600;
+        }
+
+        .nav-btn.active, .nav-btn:hover {
+            background: var(--primary); transform: translateY(-3px); box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: slideIn 0.5s ease-out; }
+
+        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .card {
+            background: var(--glass); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .nationality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .nationality-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .nationality-card:hover {
+            background: rgba(139, 92, 246, 0.2);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .flag { font-size: 3rem; margin-bottom: 10px; display: block; }
+        .fr-name { font-size: 1.2rem; font-weight: 700; color: var(--primary); display: block; }
+        .zh-name { font-size: 0.9rem; color: #a78bfa; display: block; }
+
+        .speaking { animation: pulse 1s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+        ul { list-style: none; }
+        li {
+            padding: 12px 18px; margin-bottom: 10px; background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px; cursor: pointer; transition: 0.2s;
+            display: flex; justify-content: space-between;
+        }
+        li:hover { background: rgba(255, 255, 255, 0.08); transform: translateX(5px); }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>📚 法文學習筆記</h1>
+            <p style="color: #a78bfa;">全新完整版 (含國籍表與語音)</p>
+        </header>
+
+        <nav>
+            <button class="nav-btn active" data-tab="pronunciation">🔊 發音</button>
+            <button class="nav-btn" data-tab="vocabulary">📚 詞彙</button>
+            <button class="nav-btn" data-tab="nationality">🌍 國籍</button>
+        </nav>
+
+        <main>
+            <section id="pronunciation" class="tab-content active">
+                <div class="card">
+                    <h2>👄 基本發音</h2>
+                    <ul>
+                        <li onclick="speak('bonjour')"><strong>Bonjour</strong> <span>你好</span></li>
+                        <li onclick="speak('merci')"><strong>Merci</strong> <span>謝謝</span></li>
+                        <li onclick="speak('au revoir')"><strong>Au revoir</strong> <span>再見</span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="vocabulary" class="tab-content">
+                <div class="card">
+                    <h2>📚 常用詞彙</h2>
+                    <ul>
+                        <li onclick="speak('oui')"><strong>Oui</strong> <span>是</span></li>
+                        <li onclick="speak('non')"><strong>Non</strong> <span>不</span></li>
+                        <li onclick="speak('s\'il vous plaît')"><strong>S'il vous plaît</strong> <span>請</span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="nationality" class="tab-content">
+                <div class="card">
+                    <h2>🌍 國籍表 (Nationalité)</h2>
+                    <p style="color: #a78bfa; margin-bottom: 20px;">點擊國籍卡片聽法語發音</p>
+                    <div class="nationality-grid">
+                        <div class="nationality-card" onclick="speak('suédois')"><span class="flag">🇸🇪</span><span class="fr-name">suédois</span><span class="zh-name">瑞典人</span></div>
+                        <div class="nationality-card" onclick="speak('canadien')"><span class="flag">🇨🇦</span><span class="fr-name">canadien</span><span class="zh-name">加拿大人</span></div>
+                        <div class="nationality-card" onclick="speak('allemand')"><span class="flag">🇩🇪</span><span class="fr-name">allemand</span><span class="zh-name">德國人</span></div>
+                        <div class="nationality-card" onclick="speak('américain')"><span class="flag">🇺🇸</span><span class="fr-name">américain</span><span class="zh-name">美國人</span></div>
+                        <div class="nationality-card" onclick="speak('français')"><span class="flag">🇫🇷</span><span class="fr-name">français</span><span class="zh-name">法國人</span></div>
+                        <div class="nationality-card" onclick="speak('japonais')"><span class="flag">🇯🇵</span><span class="fr-name">japonais</span><span class="zh-name">日本人</span></div>
+                        <div class="nationality-card" onclick="speak('chinois')"><span class="flag">🇨🇳</span><span class="fr-name">chinois</span><span class="zh-name">中國人</span></div>
+                        <div class="nationality-card" onclick="speak('italien')"><span class="flag">🇮🇹</span><span class="fr-name">italien</span><span class="zh-name">義大利人</span></div>
+                        <div class="nationality-card" onclick="speak('taiwanais')"><span class="flag">🇹🇼</span><span class="fr-name">taiwanais</span><span class="zh-name">台灣人</span></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById(btn.dataset.tab).classList.add('active');
+            });
+        });
+
+        function speak(text) {
+            window.speechSynthesis.cancel();
+            const u = new SpeechSynthesisUtterance(text);
+            u.lang = 'fr-FR';
+            u.rate = 0.8;
+            
+            const element = event.currentTarget;
+            element.classList.add('speaking');
+            u.onend = () => element.classList.remove('speaking');
+            
+            window.speechSynthesis.speak(u);
+        }
+    </script>
+</body>
+</html>
