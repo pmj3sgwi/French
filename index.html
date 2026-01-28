@@ -423,6 +423,77 @@
         .sub-content.active {
             display: block;
         }
+
+        /* 歌詞樣式 */
+        .lyrics-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .lyric-line {
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 3px solid transparent;
+        }
+
+        .lyric-line:hover {
+            background: rgba(139, 92, 246, 0.15);
+            border-left-color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .lyric-line.active {
+            background: rgba(139, 92, 246, 0.25);
+            border-left-color: var(--secondary);
+        }
+
+        .lyric-french {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+
+        .lyric-chinese {
+            font-size: 0.95rem;
+            color: #a78bfa;
+            display: none;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(167, 139, 250, 0.2);
+        }
+
+        .lyric-line.active .lyric-chinese {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .song-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .song-title h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
@@ -439,6 +510,7 @@
             <button class="nav-btn" data-tab="vocabulary">📚 詞彙表</button>
             <button class="nav-btn" data-tab="verbs">✍️ 動詞變化</button>
             <button class="nav-btn" data-tab="nationality">🌍 國籍</button>
+            <button class="nav-btn" data-tab="songs">🎵 歌曲</button>
             <button class="nav-btn" data-tab="flashcards">💡 閃示卡</button>
         </nav>
 
@@ -945,6 +1017,109 @@
                 </div>
             </section>
 
+            <!-- 歌曲 -->
+            <section id="songs" class="tab-content">
+                <div class="card">
+                    <div class="song-title">
+                        <h3>🎵 Les Champs-Élysées</h3>
+                        <p>Joe Dassin | 點擊歌詞顯示翻譯與發音</p>
+                    </div>
+
+                    <div class="lyrics-container">
+                        <div class="lyric-line"
+                            onclick="toggleLyric(this); speak('Je me baladais sur l avenue le cœur ouvert à l inconnu')">
+                            <div class="lyric-french">Je me baladais sur l'avenue, le cœur ouvert à l'inconnu</div>
+                            <div class="lyric-chinese">我在大道上散步，心對未知開放</div>
+                        </div>
+
+                        <div class="lyric-line"
+                            onclick="toggleLyric(this); speak('J avais envie de dire bonjour à n importe qui')">
+                            <div class="lyric-french">J'avais envie de dire bonjour à n'importe qui</div>
+                            <div class="lyric-chinese">我渴望對任何人說聲你好</div>
+                        </div>
+
+                        <div class="lyric-line"
+                            onclick="toggleLyric(this); speak('N importe qui et ce fut toi je t ai dit n importe quoi')">
+                            <div class="lyric-french">N'importe qui et ce fut toi, je t'ai dit n'importe quoi</div>
+                            <div class="lyric-chinese">不論是誰，而那個人就是你，我隨便說了些話</div>
+                        </div>
+
+                        <div class="lyric-line"
+                            onclick="toggleLyric(this); speak('Il suffisait de te parler pour t apprivoiser')">
+                            <div class="lyric-french">Il suffisait de te parler, pour t'apprivoiser</div>
+                            <div class="lyric-chinese">只要和你說說話，就能馴服你</div>
+                        </div>
+
+                        <div class="lyric-line"
+                            onclick="toggleLyric(this); speak('Aux Champs Élysées aux Champs Élysées')">
+                            <div class="lyric-french">Aux Champs-Élysées, aux Champs-Élysées</div>
+                            <div class="lyric-chinese">在香榭麗舍，在香榭麗舍</div>
+                        </div>
+
+                        <div class="lyric-line"
+                            onclick="toggleLyric(this); speak('Au soleil sous la pluie à midi ou à minuit')">
+                            <div class="lyric-french">Au soleil, sous la pluie, à midi ou à minuit</div>
+                            <div class="lyric-chinese">在陽光下，在雨中，在中午或在午夜</div>
+                        </div>
+
+                        <div class="lyric-line"
+                            onclick="toggleLyric(this); speak('Il y a tout ce que vous voulez aux Champs Élysées')">
+                            <div class="lyric-french">Il y a tout ce que vous voulez aux Champs-Élysées</div>
+                            <div class="lyric-chinese">香榭麗舍總有你想要的一切</div>
+                        </div>
+
+                        <div class="lyric-line"
+                            onclick="toggleLyric(this); speak('Tu m as dit J ai rendez vous dans un sous sol avec des fous')">
+                            <div class="lyric-french">Tu m'as dit "J'ai rendez-vous dans un sous-sol avec des fous"
+                            </div>
+                            <div class="lyric-chinese">你對我說：「我跟幾個在地下室的瘋子有約」</div>
+                        </div>
+
+                        <div class="lyric-line"
+                            onclick="toggleLyric(this); speak('Qui vivent la guitare à la main du soir au matin')">
+                            <div class="lyric-french">Qui vivent la guitare à la main, du soir au matin</div>
+                            <div class="lyric-chinese">他們靠著手上的吉他過活，從夜晚到白天</div>
+                        </div>
+
+                        <div class="lyric-line"
+                            onclick="toggleLyric(this); speak('Alors je t ai accompagnée on a chanté on a dansé')">
+                            <div class="lyric-french">Alors je t'ai accompagnée, on a chanté, on a dansé</div>
+                            <div class="lyric-chinese">於是我陪你去了，我們一起唱歌，一起跳舞</div>
+                        </div>
+
+                        <div class="lyric-line"
+                            onclick="toggleLyric(this); speak('Et l on n a même pas pensé à s embrasser')">
+                            <div class="lyric-french">Et l'on n'a même pas pensé à s'embrasser</div>
+                            <div class="lyric-chinese">卻甚至沒有想到親吻</div>
+                        </div>
+
+                        <div class="lyric-line"
+                            onclick="toggleLyric(this); speak('Hier soir deux inconnus et ce matin sur l avenue')">
+                            <div class="lyric-french">Hier soir deux inconnus et ce matin sur l'avenue</div>
+                            <div class="lyric-chinese">昨夜兩個陌生人，今早一起走在大道上</div>
+                        </div>
+
+                        <div class="lyric-line"
+                            onclick="toggleLyric(this); speak('Deux amoureux tout étourdis par la longue nuit')">
+                            <div class="lyric-french">Deux amoureux tout étourdis par la longue nuit</div>
+                            <div class="lyric-chinese">兩個戀人被漫長的夜晚搞得暈頭轉向</div>
+                        </div>
+
+                        <div class="lyric-line"
+                            onclick="toggleLyric(this); speak('Et de l Étoile à la Concorde un orchestre à mille cordes')">
+                            <div class="lyric-french">Et de l'Étoile à la Concorde, un orchestre à mille cordes</div>
+                            <div class="lyric-chinese">從凱旋門到協和廣場，千弦合奏</div>
+                        </div>
+
+                        <div class="lyric-line"
+                            onclick="toggleLyric(this); speak('Tous les oiseaux du point du jour chantent l amour')">
+                            <div class="lyric-french">Tous les oiseaux du point du jour chantent l'amour</div>
+                            <div class="lyric-chinese">所有黎明的鳥兒歌頌著愛情</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- 閃示卡 -->
             <section id="flashcards" class="tab-content">
                 <div class="card" style="text-align: center;">
@@ -1052,6 +1227,11 @@
         // 確保語音列表已載入
         if (window.speechSynthesis.onvoiceschanged !== undefined) {
             window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+        }
+
+        // 歌詞點擊切換翻譯
+        function toggleLyric(element) {
+            element.classList.toggle('active');
         }
 
         // Tab切換
