@@ -494,6 +494,56 @@
             color: var(--primary);
             margin-bottom: 10px;
         }
+
+        /* 歌詞單字翻譯 */
+        .word {
+            display: inline-block;
+            padding: 2px 4px;
+            margin: 0 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .word:hover {
+            background: rgba(139, 92, 246, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .word-translation {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.95);
+            color: #10b981;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            margin-bottom: 8px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            z-index: 100;
+        }
+
+        .word:hover .word-translation {
+            display: block;
+            animation: fadeInUp 0.2s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
     </style>
 </head>
 
@@ -728,6 +778,7 @@
                     <div class="sub-nav">
                         <button class="sub-btn active" data-subtab="vocab-words">常用詞彙</button>
                         <button class="sub-btn" data-subtab="vocab-numbers">🔢 數字 Chiffres</button>
+                        <button class="sub-btn" data-subtab="vocab-days">📅 星期 Jours</button>
                     </div>
 
                     <!-- 常用詞彙 -->
@@ -865,6 +916,63 @@
                             <span>• 91: quatre-vingt-onze (4×20+11)</span><br>
                             <span>• 101: cent un</span><br>
                             <span>• 1001: mille un</span>
+                        </div>
+                    </div>
+
+                    <!-- 星期表 -->
+                    <div id="vocab-days" class="sub-content">
+                        <h3>📅 星期 (Jours de la semaine)</h3>
+                        <p style="color: #a78bfa; margin-bottom: 20px;">點擊星期聽發音</p>
+
+                        <div class="nationality-grid">
+                            <div class="nationality-card" onclick="speak('lundi')">
+                                <div class="nationality-flag">1️⃣</div>
+                                <div class="nationality-french">lundi</div>
+                                <div class="nationality-chinese">星期一</div>
+                            </div>
+
+                            <div class="nationality-card" onclick="speak('mardi')">
+                                <div class="nationality-flag">2️⃣</div>
+                                <div class="nationality-french">mardi</div>
+                                <div class="nationality-chinese">星期二</div>
+                            </div>
+
+                            <div class="nationality-card" onclick="speak('mercredi')">
+                                <div class="nationality-flag">3️⃣</div>
+                                <div class="nationality-french">mercredi</div>
+                                <div class="nationality-chinese">星期三</div>
+                            </div>
+
+                            <div class="nationality-card" onclick="speak('jeudi')">
+                                <div class="nationality-flag">4️⃣</div>
+                                <div class="nationality-french">jeudi</div>
+                                <div class="nationality-chinese">星期四</div>
+                            </div>
+
+                            <div class="nationality-card" onclick="speak('vendredi')">
+                                <div class="nationality-flag">5️⃣</div>
+                                <div class="nationality-french">vendredi</div>
+                                <div class="nationality-chinese">星期五</div>
+                            </div>
+
+                            <div class="nationality-card" onclick="speak('samedi')">
+                                <div class="nationality-flag">6️⃣</div>
+                                <div class="nationality-french">samedi</div>
+                                <div class="nationality-chinese">星期六</div>
+                            </div>
+
+                            <div class="nationality-card" onclick="speak('dimanche')">
+                                <div class="nationality-flag">7️⃣</div>
+                                <div class="nationality-french">dimanche</div>
+                                <div class="nationality-chinese">星期日</div>
+                            </div>
+                        </div>
+
+                        <div class="example-sentence" style="margin-top: 30px;">
+                            <strong>💡 提示：</strong><br>
+                            <span>• 法文的星期不需要大寫（除非在句首）</span><br>
+                            <span>• lundi 來自拉丁文「月亮之日」</span><br>
+                            <span>• dimanche 來自拉丁文「主日」</span>
                         </div>
                     </div>
                 </div>
@@ -1028,13 +1136,33 @@
                     <div class="lyrics-container">
                         <div class="lyric-line"
                             onclick="toggleLyric(this); speak('Je me baladais sur l avenue le cœur ouvert à l inconnu')">
-                            <div class="lyric-french">Je me baladais sur l'avenue, le cœur ouvert à l'inconnu</div>
+                            <div class="lyric-french">
+                                <span class="word">Je<span class="word-translation">我</span></span>
+                                <span class="word">me<span class="word-translation">（自己）</span></span>
+                                <span class="word">baladais<span class="word-translation">散步</span></span>
+                                <span class="word">sur<span class="word-translation">在...上</span></span>
+                                <span class="word">l'avenue,<span class="word-translation">大道</span></span>
+                                <span class="word">le<span class="word-translation">（定冠詞）</span></span>
+                                <span class="word">cœur<span class="word-translation">心</span></span>
+                                <span class="word">ouvert<span class="word-translation">開放的</span></span>
+                                <span class="word">à<span class="word-translation">對於</span></span>
+                                <span class="word">l'inconnu<span class="word-translation">未知</span></span>
+                            </div>
                             <div class="lyric-chinese">我在大道上散步，心對未知開放</div>
                         </div>
 
                         <div class="lyric-line"
                             onclick="toggleLyric(this); speak('J avais envie de dire bonjour à n importe qui')">
-                            <div class="lyric-french">J'avais envie de dire bonjour à n'importe qui</div>
+                            <div class="lyric-french">
+                                <span class="word">J'avais<span class="word-translation">我有（過去式）</span></span>
+                                <span class="word">envie<span class="word-translation">渴望</span></span>
+                                <span class="word">de<span class="word-translation">去</span></span>
+                                <span class="word">dire<span class="word-translation">說</span></span>
+                                <span class="word">bonjour<span class="word-translation">你好</span></span>
+                                <span class="word">à<span class="word-translation">對</span></span>
+                                <span class="word">n'importe<span class="word-translation">任何</span></span>
+                                <span class="word">qui<span class="word-translation">誰</span></span>
+                            </div>
                             <div class="lyric-chinese">我渴望對任何人說聲你好</div>
                         </div>
 
@@ -1052,7 +1180,12 @@
 
                         <div class="lyric-line"
                             onclick="toggleLyric(this); speak('Aux Champs Élysées aux Champs Élysées')">
-                            <div class="lyric-french">Aux Champs-Élysées, aux Champs-Élysées</div>
+                            <div class="lyric-french">
+                                <span class="word">Aux<span class="word-translation">在（複數）</span></span>
+                                <span class="word">Champs-Élysées,<span class="word-translation">香榭麗舍</span></span>
+                                <span class="word">aux<span class="word-translation">在（複數）</span></span>
+                                <span class="word">Champs-Élysées<span class="word-translation">香榭麗舍</span></span>
+                            </div>
                             <div class="lyric-chinese">在香榭麗舍，在香榭麗舍</div>
                         </div>
 
