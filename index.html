@@ -1121,6 +1121,48 @@
                             <span class="nationality-french">taiwanais</span>
                             <span class="nationality-chinese">台灣人</span>
                         </div>
+
+                        <div class="nationality-card" onclick="speak('autrichien')">
+                            <span class="nationality-flag">🇦🇹</span>
+                            <span class="nationality-french">autrichien</span>
+                            <span class="nationality-chinese">奧地利人</span>
+                        </div>
+
+                        <div class="nationality-card" onclick="speak('marocain')">
+                            <span class="nationality-flag">🇲🇦</span>
+                            <span class="nationality-french">marocain</span>
+                            <span class="nationality-chinese">摩洛哥人</span>
+                        </div>
+
+                        <div class="nationality-card" onclick="speak('portugais')">
+                            <span class="nationality-flag">🇵🇹</span>
+                            <span class="nationality-french">portugais</span>
+                            <span class="nationality-chinese">葡萄牙人</span>
+                        </div>
+
+                        <div class="nationality-card" onclick="speak('mexicain')">
+                            <span class="nationality-flag">🇲🇽</span>
+                            <span class="nationality-french">mexicain</span>
+                            <span class="nationality-chinese">墨西哥人</span>
+                        </div>
+
+                        <div class="nationality-card" onclick="speak('polonais')">
+                            <span class="nationality-flag">🇵🇱</span>
+                            <span class="nationality-french">polonais</span>
+                            <span class="nationality-chinese">波蘭人</span>
+                        </div>
+
+                        <div class="nationality-card" onclick="speak('grec')">
+                            <span class="nationality-flag">🇬🇷</span>
+                            <span class="nationality-french">grec</span>
+                            <span class="nationality-chinese">希臘人</span>
+                        </div>
+
+                        <div class="nationality-card" onclick="speak('russe')">
+                            <span class="nationality-flag">🇷🇺</span>
+                            <span class="nationality-french">russe</span>
+                            <span class="nationality-chinese">俄羅斯人</span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1134,34 +1176,48 @@
                     </div>
 
                     <div class="lyrics-container">
-                        <div class="lyric-line"
-                            onclick="toggleLyric(this); speak('Je me baladais sur l avenue le cœur ouvert à l inconnu')">
+                        <div class="lyric-line" onclick="toggleLyric(this)">
                             <div class="lyric-french">
-                                <span class="word">Je<span class="word-translation">我</span></span>
-                                <span class="word">me<span class="word-translation">（自己）</span></span>
-                                <span class="word">baladais<span class="word-translation">散步</span></span>
-                                <span class="word">sur<span class="word-translation">在...上</span></span>
-                                <span class="word">l'avenue,<span class="word-translation">大道</span></span>
-                                <span class="word">le<span class="word-translation">（定冠詞）</span></span>
-                                <span class="word">cœur<span class="word-translation">心</span></span>
-                                <span class="word">ouvert<span class="word-translation">開放的</span></span>
-                                <span class="word">à<span class="word-translation">對於</span></span>
-                                <span class="word">l'inconnu<span class="word-translation">未知</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('Je')">Je<span
+                                        class="word-translation">我</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('me')">me<span
+                                        class="word-translation">（自己）</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('baladais')">baladais<span
+                                        class="word-translation">散步</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('sur')">sur<span
+                                        class="word-translation">在...上</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('avenue')">l'avenue,<span
+                                        class="word-translation">大道</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('le')">le<span
+                                        class="word-translation">（定冠詞）</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('cœur')">cœur<span
+                                        class="word-translation">心</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('ouvert')">ouvert<span
+                                        class="word-translation">開放的</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('à')">à<span
+                                        class="word-translation">對於</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('inconnu')">l'inconnu<span
+                                        class="word-translation">未知</span></span>
                             </div>
                             <div class="lyric-chinese">我在大道上散步，心對未知開放</div>
                         </div>
 
-                        <div class="lyric-line"
-                            onclick="toggleLyric(this); speak('J avais envie de dire bonjour à n importe qui')">
+                        <div class="lyric-line" onclick="toggleLyric(this)">
                             <div class="lyric-french">
-                                <span class="word">J'avais<span class="word-translation">我有（過去式）</span></span>
-                                <span class="word">envie<span class="word-translation">渴望</span></span>
-                                <span class="word">de<span class="word-translation">去</span></span>
-                                <span class="word">dire<span class="word-translation">說</span></span>
-                                <span class="word">bonjour<span class="word-translation">你好</span></span>
-                                <span class="word">à<span class="word-translation">對</span></span>
-                                <span class="word">n'importe<span class="word-translation">任何</span></span>
-                                <span class="word">qui<span class="word-translation">誰</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('avais')">J'avais<span
+                                        class="word-translation">我有（過去式）</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('envie')">envie<span
+                                        class="word-translation">渴望</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('de')">de<span
+                                        class="word-translation">去</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('dire')">dire<span
+                                        class="word-translation">說</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('bonjour')">bonjour<span
+                                        class="word-translation">你好</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('à')">à<span
+                                        class="word-translation">對</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('importe qui')">n'importe
+                                    qui<span class="word-translation">任何人</span></span>
                             </div>
                             <div class="lyric-chinese">我渴望對任何人說聲你好</div>
                         </div>
@@ -1178,13 +1234,18 @@
                             <div class="lyric-chinese">只要和你說說話，就能馴服你</div>
                         </div>
 
-                        <div class="lyric-line"
-                            onclick="toggleLyric(this); speak('Aux Champs Élysées aux Champs Élysées')">
+                        <div class="lyric-line" onclick="toggleLyric(this)">
                             <div class="lyric-french">
-                                <span class="word">Aux<span class="word-translation">在（複數）</span></span>
-                                <span class="word">Champs-Élysées,<span class="word-translation">香榭麗舍</span></span>
-                                <span class="word">aux<span class="word-translation">在（複數）</span></span>
-                                <span class="word">Champs-Élysées<span class="word-translation">香榭麗舍</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('Aux')">Aux<span
+                                        class="word-translation">在（複數）</span></span>
+                                <span class="word"
+                                    onclick="event.stopPropagation(); speak('Champs Élysées')">Champs-Élysées,<span
+                                        class="word-translation">香榭麗舍</span></span>
+                                <span class="word" onclick="event.stopPropagation(); speak('aux')">aux<span
+                                        class="word-translation">在（複數）</span></span>
+                                <span class="word"
+                                    onclick="event.stopPropagation(); speak('Champs Élysées')">Champs-Élysées<span
+                                        class="word-translation">香榭麗舍</span></span>
                             </div>
                             <div class="lyric-chinese">在香榭麗舍，在香榭麗舍</div>
                         </div>
