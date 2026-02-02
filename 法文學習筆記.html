@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,7 +75,8 @@
             font-weight: 600;
         }
 
-        .nav-btn.active, .nav-btn:hover {
+        .nav-btn.active,
+        .nav-btn:hover {
             background: var(--primary);
             border-color: var(--primary);
             box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
@@ -90,7 +92,8 @@
             animation: slideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .glass, .card {
+        .glass,
+        .card {
             background: var(--glass);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -204,7 +207,8 @@
             transform: rotateY(180deg);
         }
 
-        .flashcard-front, .flashcard-back {
+        .flashcard-front,
+        .flashcard-back {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -281,6 +285,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -319,6 +324,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="app-container">
         <header>
@@ -339,7 +345,7 @@
             <section id="pronunciation" class="tab-content active">
                 <div class="card">
                     <h2>👄 完整發音規則 (Prononciation Complète)</h2>
-                    
+
                     <h3>📌 單母音 (Voyelles simples)</h3>
                     <div class="grid">
                         <div>
@@ -375,7 +381,8 @@
                         <div>
                             <ul>
                                 <li><strong>an, am, en, em</strong> → [ã] 如：dans, jambe, vent, temps</li>
-                                <li><strong>in, im, ain, aim, ein</strong> → [ɛ̃] 如：vin, impossible, pain, faim, plein</li>
+                                <li><strong>in, im, ain, aim, ein</strong> → [ɛ̃] 如：vin, impossible, pain, faim, plein
+                                </li>
                             </ul>
                         </div>
                         <div>
@@ -396,7 +403,7 @@
                                 <li><strong>c + e/i/y</strong> → [s] 如：cinéma, centre</li>
                                 <li><strong>ç</strong> → [s] 如：français, garçon</li>
                             </ul>
-                            
+
                             <h4>G 的發音</h4>
                             <ul>
                                 <li><strong>g + a/o/u</strong> → [g] 如：gare, gomme</li>
@@ -404,7 +411,7 @@
                                 <li><strong>gu + e/i</strong> → [g] 如：guerre, guide</li>
                             </ul>
                         </div>
-                        
+
                         <div>
                             <h4>S 的發音</h4>
                             <ul>
@@ -412,7 +419,7 @@
                                 <li><strong>兩個母音間</strong> → [z] 如：rose, maison</li>
                                 <li><strong>ss</strong> → [s] 如：poisson, classe</li>
                             </ul>
-                            
+
                             <h4>其他重要子音</h4>
                             <ul>
                                 <li><strong>h</strong> → 不發音 (分h muet和h aspiré)</li>
@@ -486,54 +493,247 @@
 
             <!-- 課程內容 -->
             <section id="lessons" class="tab-content">
+                <!-- Leçon 1 -->
                 <div class="card">
-                    <h2>📖 Leçon 1 - 自我介紹</h2>
-                    
-                    <h3>基本招呼語</h3>
+                    <h2>📖 Leçon 1 - être et avoir 動詞用法</h2>
+
+                    <h3>🎯 être（是）和 avoir（有）的用法</h3>
+                    <div class="grid">
+                        <div>
+                            <h4>être（是）</h4>
+                            <ul>
+                                <li><strong>je suis</strong> - 我是</li>
+                                <li><strong>tu es</strong> - 你是</li>
+                                <li><strong>il/elle est</strong> - 他/她是</li>
+                                <li><strong>nous sommes</strong> - 我們是</li>
+                                <li><strong>vous êtes</strong> - 您是/你們是</li>
+                                <li><strong>ils/elles sont</strong> - 他們/她們是</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>avoir（有）</h4>
+                            <ul>
+                                <li><strong>j'ai</strong> - 我有</li>
+                                <li><strong>tu as</strong> - 你有</li>
+                                <li><strong>il/elle a</strong> - 他/她有</li>
+                                <li><strong>nous avons</strong> - 我們有</li>
+                                <li><strong>vous avez</strong> - 您有/你們有</li>
+                                <li><strong>ils/elles ont</strong> - 他們/她們有</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">📝 例句練習</h3>
+                    <div class="example-sentence">
+                        <strong>Bonjour! Je m'appelle Lisa, je suis Japonaise, j'ai dix-neuf ans. Je suis étudiante,
+                            j'ai un chat et deux lapins.</strong>
+                        <span>你好！我叫Lisa，我是日本人，我19歲。我是學生，我有一隻貓和兩隻兔子。</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>Elle a douze ans, elle est petite, elle a sommeil.</strong>
+                        <span>她12歲，她很小，她很困。</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>Il a vingt ans, il est français, il est grand, il a un vélo.</strong>
+                        <span>他20歲，他是法國人，他很高，他有一輛自行車。</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>Tu as soif? Non, j'ai faim.</strong>
+                        <span>你渴嗎？不，我很餓。</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>Vous avez peur?</strong>
+                        <span>你們都害怕嗎？</span>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">🔢 數字 Chiffres (21-99)</h3>
+                    <div class="grid">
+                        <div>
+                            <h4>特殊數字</h4>
+                            <ul>
+                                <li><strong>21</strong> - vingt et un</li>
+                                <li><strong>31</strong> - trente et un</li>
+                                <li><strong>41</strong> - quarante et un</li>
+                                <li><strong>51</strong> - cinquante et un</li>
+                                <li><strong>61</strong> - soixante et un</li>
+                                <li><strong>71</strong> - soixante et onze (60+11)</li>
+                                <li><strong>81</strong> - quatre-vingt-un</li>
+                                <li><strong>91</strong> - quatre-vingt-onze (80+11)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>更多例子</h4>
+                            <ul>
+                                <li><strong>72</strong> - soixante-douze</li>
+                                <li><strong>75</strong> - soixante-quinze</li>
+                                <li><strong>89</strong> - quatre-vingt-neuf</li>
+                                <li><strong>93</strong> - quatre-vingt-treize</li>
+                                <li><strong>99</strong> - quatre-vingt-dix-neuf</li>
+                                <li><strong>101</strong> - cent un</li>
+                                <li><strong>1001</strong> - mille un</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">📞 電話號碼練習</h3>
                     <ul>
-                        <li><strong>Bonjour</strong> - 你好（白天）</li>
-                        <li><strong>Bonsoir</strong> - 晚上好</li>
-                        <li><strong>Salut</strong> - 嗨（非正式）</li>
-                        <li><strong>Au revoir</strong> - 再見</li>
-                        <li><strong>À bientôt</strong> - 待會見</li>
-                        <li><strong>Bonne journée</strong> - 祝你有美好的一天</li>
-                        <li><strong>Bonne soirée</strong> - 祝你有美好的夜晚</li>
+                        <li><strong>01 42 84 90 00:</strong> zéro un, quarante-deux, quatre-vingt-quatre,
+                            quatre-vingt-dix, zéro zéro</li>
+                        <li><strong>03 46 49 73 79:</strong> zéro trois, quarante-six, quarante-neuf, soixante-treize,
+                            soixante-dix-neuf</li>
+                        <li><strong>06 19 21 44 94:</strong> zéro six, dix-neuf, vingt et un, quarante-quatre,
+                            quatre-vingt-quatorze</li>
                     </ul>
 
-                    <h3 style="margin-top: 30px;">自我介紹句型</h3>
-                    <div class="example-sentence">
-                        <strong>Je m'appelle Yachi.</strong>
-                        <span>我叫 Yachi。</span>
+                    <h3 style="margin-top: 30px;">🎵 Chanson - Les Champs-Élysées (香榭麗舍)</h3>
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border-left: 4px solid #f472b6;">
+                        <div class="example-sentence"
+                            style="border-left: none; background: transparent; padding: 5px 0;">
+                            <strong>Je me baladais sur l'avenue</strong>
+                            <span>我在大道上閒逛</span>
+                        </div>
+                        <div class="example-sentence"
+                            style="border-left: none; background: transparent; padding: 5px 0;">
+                            <strong>Le cœur ouvert à l'inconnu</strong>
+                            <span>懷著對未知敞開的心房</span>
+                        </div>
+                        <div class="example-sentence"
+                            style="border-left: none; background: transparent; padding: 5px 0;">
+                            <strong>J'avais envie de dire bonjour à n'importe qui</strong>
+                            <span>我只想對任何人說聲你好</span>
+                        </div>
+                        <div class="example-sentence"
+                            style="border-left: none; background: transparent; padding: 5px 0;">
+                            <strong>N'importe qui, ce fut toi</strong>
+                            <span>恰好那個人，就是你</span>
+                        </div>
+                        <div class="example-sentence"
+                            style="border-left: none; background: transparent; padding: 5px 0;">
+                            <strong>Aux Champs-Élysées, aux Champs-Élysées</strong>
+                            <span>香榭麗舍大道上，香榭麗舍大道上</span>
+                        </div>
+                        <div class="example-sentence"
+                            style="border-left: none; background: transparent; padding: 5px 0;">
+                            <strong>Au soleil, sous la pluie</strong>
+                            <span>無論是陽光燦爛，還是雨絲飄灑</span>
+                        </div>
+                        <div class="example-sentence"
+                            style="border-left: none; background: transparent; padding: 5px 0;">
+                            <strong>À midi ou à minuit</strong>
+                            <span>無論是中午，還是午夜時分</span>
+                        </div>
+                        <div class="example-sentence"
+                            style="border-left: none; background: transparent; padding: 5px 0;">
+                            <strong>Il y a tout ce que vous voulez aux Champs-Élysées</strong>
+                            <span>你想要的任何一切，都在香榭麗舍大道上</span>
+                        </div>
                     </div>
-                    <div class="example-sentence">
-                        <strong>Je suis taiwanaise.</strong>
-                        <span>我是台灣人。</span>
-                    </div>
-                    <div class="example-sentence">
-                        <strong>J'ai 31 ans.</strong>
-                        <span>我31歲。</span>
+                </div>
+
+                <!-- Leçon 2 -->
+                <div class="card" style="margin-top: 30px;">
+                    <h2>📖 Leçon 2 - 國籍與自我介紹對話</h2>
+
+                    <h3>📞 電話號碼練習 Chiffres</h3>
+                    <ul>
+                        <li><strong>02 45 62 89 41:</strong> zéro deux, quarante-cinq, soixante-deux, quatre-vingt-neuf,
+                            quarante et un</li>
+                        <li><strong>05 17 28 42 72:</strong> zéro cinq, dix-sept, vingt-huit, quarante-deux,
+                            soixante-douze</li>
+                        <li><strong>02 49 34 00 20:</strong> zéro deux, quarante-neuf, trente-quatre, zéro zéro, vingt
+                        </li>
+                        <li><strong>09 05 37 63 74:</strong> zéro neuf, zéro cinq, trente-sept, soixante-trois,
+                            soixante-quatorze</li>
+                        <li><strong>07 15 32 71 81:</strong> zéro sept, quinze, trente-deux, soixante et onze,
+                            quatre-vingt-un</li>
+                    </ul>
+
+                    <h3 style="margin-top: 30px;">🌍 國籍女性形式 Nationalité (féminin)</h3>
+                    <div class="grid">
+                        <div>
+                            <ul>
+                                <li><strong>française</strong> - 法國人（女）</li>
+                                <li><strong>portugaise</strong> - 葡萄牙人（女）</li>
+                                <li><strong>suédoise</strong> - 瑞典人（女）</li>
+                                <li><strong>chinoise</strong> - 中國人（女）</li>
+                                <li><strong>mexicaine</strong> - 墨西哥人（女）</li>
+                                <li><strong>américaine</strong> - 美國人（女）</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><strong>autrichienne</strong> - 奧地利人（女）</li>
+                                <li><strong>canadienne</strong> - 加拿大人（女）</li>
+                                <li><strong>coréenne</strong> - 韓國人（女）</li>
+                                <li><strong>allemande</strong> - 德國人（女）</li>
+                                <li><strong>espagnole</strong> - 西班牙人（女）</li>
+                                <li><strong>russe</strong> - 俄羅斯人（男女同形）</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <h3 style="margin-top: 30px;">範例人物</h3>
-                    <div class="grid">
-                        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
-                            <h4>Roberto</h4>
-                            <p>Je m'appelle Roberto.</p>
-                            <p>Je suis italien.</p>
-                            <p>Je suis étudiant.</p>
+                    <h3 style="margin-top: 30px;">📝 國籍用法說明</h3>
+                    <div class="example-sentence">
+                        <strong>1. 國籍用法</strong>
+                        <span>我們是加拿大人: Nous sommes canadien(ne)s.</span>
+                        <span>這是一個德國人: C'est un Allemand. / C'est une Allemande.</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>2. 語言（陽性形式）</strong>
+                        <span>我說法文和西班牙文: Je parle français et espagnol.</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>3. 形容詞（放在名詞後面）</strong>
+                        <span>我有一輛德國車: J'ai une voiture allemande.</span>
+                        <span>他們有兩隻瑞典貓: Ils ont deux chats suédois.</span>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">💬 對話練習</h3>
+                    <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px;">
+                        <div class="example-sentence">
+                            <strong>- Bonjour, je m'appelle Paul Bouchard. Je suis canadien.</strong>
+                            <span>- 你好，我叫Paul Bouchard。我是加拿大人。</span>
                         </div>
-                        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
-                            <h4>Yoko</h4>
-                            <p>Je m'appelle Yoko.</p>
-                            <p>Je suis japonaise.</p>
-                            <p>Je suis professeur.</p>
+                        <div class="example-sentence">
+                            <strong>- Natacha Muller, je suis autrichienne. Enchantée!</strong>
+                            <span>- Natacha Muller，我是奧地利人。很高興認識你！</span>
                         </div>
-                        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
-                            <h4>Sven</h4>
-                            <p>Je m'appelle Sven.</p>
-                            <p>Je suis suédois.</p>
-                            <p>Je suis ingénieur.</p>
+                        <div class="example-sentence">
+                            <strong>- Oh! Vous vous appelez Sofia! Moi aussi! Vous êtes russe?</strong>
+                            <span>- 哦！您叫Sofia！我也是！您是俄羅斯人嗎？</span>
                         </div>
+                        <div class="example-sentence">
+                            <strong>- Ah non! Moi, je suis mexicaine!</strong>
+                            <span>- 不！我是墨西哥人！</span>
+                        </div>
+                        <div class="example-sentence">
+                            <strong>- Qui est-ce? C'est qui?</strong>
+                            <span>- 這是誰？</span>
+                        </div>
+                        <div class="example-sentence">
+                            <strong>- C'est un journaliste. Il s'appelle Karl Rainer. Il est allemand.</strong>
+                            <span>- 這是一位記者。他叫Karl Rainer。他是德國人。</span>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">✍️ 翻譯練習 Traduction</h3>
+                    <div class="example-sentence">
+                        <strong>您好！我叫Anna，我是加拿大人，您呢？您是...?</strong>
+                        <span>Bonjour! Je m'appelle Anna, je suis canadienne. Et vous? Vous êtes....?</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>您好！我是Yoko，我是日本人，很高興認識您</strong>
+                        <span>Bonjour! Je m'appelle Yoko, je suis japonaise. Enchantée!</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>您好！我是奧地利人，這位是Susan，她是英國人</strong>
+                        <span>Bonjour! Je suis autrichien. Voici Susan, elle est anglaise.</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>這是一位老師，她是法國人，她叫Caroline，而她的丈夫是韓國人</strong>
+                        <span>C'est une professeur(e), elle est française. Elle s'appelle Caroline. Son mari est
+                            coréen.</span>
                     </div>
                 </div>
             </section>
@@ -553,24 +753,60 @@
                     <div class="card">
                         <h2>être (是)</h2>
                         <table>
-                            <tr><td>je suis</td><td>我是</td></tr>
-                            <tr><td>tu es</td><td>你是</td></tr>
-                            <tr><td>il/elle est</td><td>他/她是</td></tr>
-                            <tr><td>nous sommes</td><td>我們是</td></tr>
-                            <tr><td>vous êtes</td><td>您是/你們是</td></tr>
-                            <tr><td>ils/elles sont</td><td>他們/她們是</td></tr>
+                            <tr>
+                                <td>je suis</td>
+                                <td>我是</td>
+                            </tr>
+                            <tr>
+                                <td>tu es</td>
+                                <td>你是</td>
+                            </tr>
+                            <tr>
+                                <td>il/elle est</td>
+                                <td>他/她是</td>
+                            </tr>
+                            <tr>
+                                <td>nous sommes</td>
+                                <td>我們是</td>
+                            </tr>
+                            <tr>
+                                <td>vous êtes</td>
+                                <td>您是/你們是</td>
+                            </tr>
+                            <tr>
+                                <td>ils/elles sont</td>
+                                <td>他們/她們是</td>
+                            </tr>
                         </table>
                     </div>
 
                     <div class="card">
                         <h2>avoir (有)</h2>
                         <table>
-                            <tr><td>j'ai</td><td>我有</td></tr>
-                            <tr><td>tu as</td><td>你有</td></tr>
-                            <tr><td>il/elle a</td><td>他/她有</td></tr>
-                            <tr><td>nous avons</td><td>我們有</td></tr>
-                            <tr><td>vous avez</td><td>您有/你們有</td></tr>
-                            <tr><td>ils/elles ont</td><td>他們/她們有</td></tr>
+                            <tr>
+                                <td>j'ai</td>
+                                <td>我有</td>
+                            </tr>
+                            <tr>
+                                <td>tu as</td>
+                                <td>你有</td>
+                            </tr>
+                            <tr>
+                                <td>il/elle a</td>
+                                <td>他/她有</td>
+                            </tr>
+                            <tr>
+                                <td>nous avons</td>
+                                <td>我們有</td>
+                            </tr>
+                            <tr>
+                                <td>vous avez</td>
+                                <td>您有/你們有</td>
+                            </tr>
+                            <tr>
+                                <td>ils/elles ont</td>
+                                <td>他們/她們有</td>
+                            </tr>
                         </table>
                     </div>
                 </div>
@@ -583,8 +819,12 @@
                     <p style="color: #a78bfa; margin-bottom: 20px;">點擊卡片翻面</p>
                     <div class="flashcard-container">
                         <div class="flashcard" id="card">
-                            <div class="flashcard-front"><h2 id="card-front-text">Bonjour</h2></div>
-                            <div class="flashcard-back"><h2 id="card-back-text">你好</h2></div>
+                            <div class="flashcard-front">
+                                <h2 id="card-front-text">Bonjour</h2>
+                            </div>
+                            <div class="flashcard-back">
+                                <h2 id="card-back-text">你好</h2>
+                            </div>
                         </div>
                     </div>
                     <div class="flashcard-controls">
@@ -600,57 +840,79 @@
     <script>
         // 詞彙數據
         const vocabulary = [
-            {fr: "Bonjour", zh: "你好/早安 (名詞)"},
-            {fr: "Bonsoir", zh: "晚上好 (名詞)"},
-            {fr: "Salut", zh: "嗨/拜拜 (名詞-非正式)"},
-            {fr: "Au revoir", zh: "再見 (片語)"},
-            {fr: "À bientôt", zh: "待會見 (片語)"},
-            {fr: "Bonne journée", zh: "祝你有美好的一天 (片語)"},
-            {fr: "Bonne soirée", zh: "祝你有美好的夜晚 (片語)"},
-            {fr: "oui", zh: "是 (副詞)"},
-            {fr: "non", zh: "不 (副詞)"},
-            {fr: "merci", zh: "謝謝 (名詞)"},
-            {fr: "s'il vous plaît", zh: "請 (片語-正式)"},
-            {fr: "s'il te plaît", zh: "請 (片語-非正式)"},
-            {fr: "pardon", zh: "抱歉 (名詞)"},
-            {fr: "excusez-moi", zh: "對不起 (片語)"},
-            {fr: "je ne comprends pas", zh: "我不懂 (句子)"},
-            {fr: "Je m'appelle", zh: "我叫 (句型)"},
-            {fr: "Je suis", zh: "我是 (句型)"},
-            {fr: "J'ai", zh: "我有 (句型)"},
-            {fr: "un étudiant", zh: "一個學生 (名詞-陽性)"},
-            {fr: "une étudiante", zh: "一個學生 (名詞-陰性)"},
-            {fr: "un professeur", zh: "一個老師 (名詞)"},
-            {fr: "un ingénieur", zh: "一個工程師 (名詞-陽性)"},
-            {fr: "un médecin", zh: "一個醫生 (名詞)"},
-            {fr: "italien", zh: "義大利人 (形容詞-陽性)"},
-            {fr: "italienne", zh: "義大利人 (形容詞-陰性)"},
-            {fr: "japonais", zh: "日本人 (形容詞-陽性)"},
-            {fr: "japonaise", zh: "日本人 (形容詞-陰性)"},
-            {fr: "suédois", zh: "瑞典人 (形容詞-陽性)"},
-            {fr: "suédoise", zh: "瑞典人 (形容詞-陰性)"},
-            {fr: "zéro", zh: "0 (數字)"},
-            {fr: "un", zh: "1 (數字-陽性)"},
-            {fr: "une", zh: "1 (數字-陰性)"},
-            {fr: "deux", zh: "2 (數字)"},
-            {fr: "trois", zh: "3 (數字)"},
-            {fr: "quatre", zh: "4 (數字)"},
-            {fr: "cinq", zh: "5 (數字)"},
-            {fr: "six", zh: "6 (數字)"},
-            {fr: "sept", zh: "7 (數字)"},
-            {fr: "huit", zh: "8 (數字)"},
-            {fr: "neuf", zh: "9 (數字)"},
-            {fr: "dix", zh: "10 (數字)"},
-            {fr: "onze", zh: "11 (數字)"},
-            {fr: "douze", zh: "12 (數字)"},
-            {fr: "treize", zh: "13 (數字)"},
-            {fr: "quatorze", zh: "14 (數字)"},
-            {fr: "quinze", zh: "15 (數字)"},
-            {fr: "seize", zh: "16 (數字)"},
-            {fr: "dix-sept", zh: "17 (數字)"},
-            {fr: "dix-huit", zh: "18 (數字)"},
-            {fr: "dix-neuf", zh: "19 (數字)"},
-            {fr: "vingt", zh: "20 (數字)"},
+            { fr: "Bonjour", zh: "你好/早安 (名詞)" },
+            { fr: "Bonsoir", zh: "晚上好 (名詞)" },
+            { fr: "Salut", zh: "嗨/拜拜 (名詞-非正式)" },
+            { fr: "Au revoir", zh: "再見 (片語)" },
+            { fr: "À bientôt", zh: "待會見 (片語)" },
+            { fr: "Bonne journée", zh: "祝你有美好的一天 (片語)" },
+            { fr: "Bonne soirée", zh: "祝你有美好的夜晚 (片語)" },
+            { fr: "oui", zh: "是 (副詞)" },
+            { fr: "non", zh: "不 (副詞)" },
+            { fr: "merci", zh: "謝謝 (名詞)" },
+            { fr: "s'il vous plaît", zh: "請 (片語-正式)" },
+            { fr: "s'il te plaît", zh: "請 (片語-非正式)" },
+            { fr: "pardon", zh: "抱歉 (名詞)" },
+            { fr: "excusez-moi", zh: "對不起 (片語)" },
+            { fr: "je ne comprends pas", zh: "我不懂 (句子)" },
+            { fr: "Je m'appelle", zh: "我叫 (句型)" },
+            { fr: "Je suis", zh: "我是 (句型)" },
+            { fr: "J'ai", zh: "我有 (句型)" },
+            { fr: "un étudiant", zh: "一個學生 (名詞-陽性)" },
+            { fr: "une étudiante", zh: "一個學生 (名詞-陰性)" },
+            { fr: "un professeur", zh: "一個老師 (名詞)" },
+            { fr: "un ingénieur", zh: "一個工程師 (名詞-陽性)" },
+            { fr: "un médecin", zh: "一個醫生 (名詞)" },
+            { fr: "italien", zh: "義大利人 (形容詞-陽性)" },
+            { fr: "italienne", zh: "義大利人 (形容詞-陰性)" },
+            { fr: "japonais", zh: "日本人 (形容詞-陽性)" },
+            { fr: "japonaise", zh: "日本人 (形容詞-陰性)" },
+            { fr: "suédois", zh: "瑞典人 (形容詞-陽性)" },
+            { fr: "suédoise", zh: "瑞典人 (形容詞-陰性)" },
+            { fr: "zéro", zh: "0 (數字)" },
+            { fr: "un", zh: "1 (數字-陽性)" },
+            { fr: "une", zh: "1 (數字-陰性)" },
+            { fr: "deux", zh: "2 (數字)" },
+            { fr: "trois", zh: "3 (數字)" },
+            { fr: "quatre", zh: "4 (數字)" },
+            { fr: "cinq", zh: "5 (數字)" },
+            { fr: "six", zh: "6 (數字)" },
+            { fr: "sept", zh: "7 (數字)" },
+            { fr: "huit", zh: "8 (數字)" },
+            { fr: "neuf", zh: "9 (數字)" },
+            { fr: "dix", zh: "10 (數字)" },
+            { fr: "onze", zh: "11 (數字)" },
+            { fr: "douze", zh: "12 (數字)" },
+            { fr: "treize", zh: "13 (數字)" },
+            { fr: "quatorze", zh: "14 (數字)" },
+            { fr: "quinze", zh: "15 (數字)" },
+            { fr: "seize", zh: "16 (數字)" },
+            { fr: "dix-sept", zh: "17 (數字)" },
+            { fr: "dix-huit", zh: "18 (數字)" },
+            { fr: "dix-neuf", zh: "19 (數字)" },
+            { fr: "vingt", zh: "20 (數字)" },
+            // 時間 - 星期
+            { fr: "lundi", zh: "星期一 (時間)" },
+            { fr: "mardi", zh: "星期二 (時間)" },
+            { fr: "mercredi", zh: "星期三 (時間)" },
+            { fr: "jeudi", zh: "星期四 (時間)" },
+            { fr: "vendredi", zh: "星期五 (時間)" },
+            { fr: "samedi", zh: "星期六 (時間)" },
+            { fr: "dimanche", zh: "星期日 (時間)" },
+            // 時間 - 一天的時段
+            { fr: "le matin", zh: "早上 (時間)" },
+            { fr: "le midi", zh: "中午 (時間)" },
+            { fr: "l'après-midi", zh: "下午 (時間)" },
+            { fr: "le soir", zh: "傍晚/晚上 (時間)" },
+            { fr: "la nuit", zh: "夜晚 (時間)" },
+            { fr: "minuit", zh: "午夜 (時間)" },
+            { fr: "ce matin", zh: "今天早上 (時間)" },
+            { fr: "ce soir", zh: "今天晚上 (時間)" },
+            { fr: "hier soir", zh: "昨晚 (時間)" },
+            // 更多時間相關詞彙
+            { fr: "aujourd'hui", zh: "今天 (時間)" },
+            { fr: "demain", zh: "明天 (時間)" },
+            { fr: "hier", zh: "昨天 (時間)" },
         ];
 
         // Tab切換
@@ -705,4 +967,5 @@
         updateCard();
     </script>
 </body>
+
 </html>

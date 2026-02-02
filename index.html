@@ -136,7 +136,6 @@
             background: rgba(255, 255, 255, 0.03);
             border-radius: 8px;
             transition: all 0.3s ease;
-            cursor: pointer;
         }
 
         li:hover {
@@ -180,7 +179,6 @@
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
-            cursor: pointer;
         }
 
         .vocab-item:hover {
@@ -324,226 +322,6 @@
             display: block;
             margin-top: 5px;
         }
-
-        /* 國籍卡片樣式 */
-        .nationality-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .nationality-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 25px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .nationality-card:hover {
-            background: rgba(139, 92, 246, 0.2);
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
-        }
-
-        .nationality-flag {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .nationality-french {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .nationality-chinese {
-            font-size: 1rem;
-            color: #a78bfa;
-            display: block;
-        }
-
-        .speaking {
-            animation: pulse 1s infinite;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.7;
-                transform: scale(0.98);
-            }
-        }
-
-        /* 子標籤頁樣式 */
-        .sub-nav {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-
-        .sub-btn {
-            background: rgba(139, 92, 246, 0.2);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            color: #a78bfa;
-            padding: 8px 20px;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .sub-btn.active,
-        .sub-btn:hover {
-            background: rgba(139, 92, 246, 0.4);
-            border-color: var(--primary);
-            color: #fff;
-        }
-
-        .sub-content {
-            display: none;
-        }
-
-        .sub-content.active {
-            display: block;
-        }
-
-        /* 歌詞樣式 */
-        .lyrics-container {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .lyric-line {
-            padding: 15px 20px;
-            margin-bottom: 10px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s;
-            border-left: 3px solid transparent;
-        }
-
-        .lyric-line:hover {
-            background: rgba(139, 92, 246, 0.15);
-            border-left-color: var(--primary);
-            transform: translateX(5px);
-        }
-
-        .lyric-line.active {
-            background: rgba(139, 92, 246, 0.25);
-            border-left-color: var(--secondary);
-        }
-
-        .lyric-french {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 5px;
-        }
-
-        .lyric-chinese {
-            font-size: 0.95rem;
-            color: #a78bfa;
-            display: none;
-            margin-top: 8px;
-            padding-top: 8px;
-            border-top: 1px solid rgba(167, 139, 250, 0.2);
-        }
-
-        .lyric-line.active .lyric-chinese {
-            display: block;
-            animation: fadeIn 0.3s;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-5px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .song-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .song-title h3 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        /* 歌詞單字翻譯 */
-        .word {
-            display: inline-block;
-            padding: 2px 4px;
-            margin: 0 2px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: all 0.2s;
-            position: relative;
-        }
-
-        .word:hover {
-            background: rgba(139, 92, 246, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .word-translation {
-            display: none;
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(15, 23, 42, 0.95);
-            color: #10b981;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            white-space: nowrap;
-            margin-bottom: 8px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            z-index: 100;
-        }
-
-        .word:hover .word-translation {
-            display: block;
-            animation: fadeInUp 0.2s;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateX(-50%) translateY(5px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(-50%) translateY(0);
-            }
-        }
     </style>
 </head>
 
@@ -551,7 +329,7 @@
     <div class="app-container">
         <header>
             <h1>📚 法文學習筆記</h1>
-            <p style="color: #a78bfa; margin-top: 10px;">完整版 - 基於99頁筆記整理 (含國籍表)</p>
+            <p style="color: #a78bfa; margin-top: 10px;">完整版 - 基於99頁筆記整理</p>
         </header>
 
         <nav>
@@ -559,8 +337,6 @@
             <button class="nav-btn" data-tab="lessons">📖 課程內容</button>
             <button class="nav-btn" data-tab="vocabulary">📚 詞彙表</button>
             <button class="nav-btn" data-tab="verbs">✍️ 動詞變化</button>
-            <button class="nav-btn" data-tab="nationality">🌍 國籍</button>
-            <button class="nav-btn" data-tab="songs">🎵 歌曲</button>
             <button class="nav-btn" data-tab="flashcards">💡 閃示卡</button>
         </nav>
 
@@ -715,208 +491,249 @@
                 </div>
             </section>
 
-            <!--課程內容 -->
+            <!-- 課程內容 -->
             <section id="lessons" class="tab-content">
+                <!-- Leçon 1 -->
                 <div class="card">
-                    <h2>📖 課程內容 (Leçons)</h2>
+                    <h2>📖 Leçon 1 - être et avoir 動詞用法</h2>
 
-                    <!-- 子標籤導航 -->
-                    <div class="sub-nav">
-                        <button class="sub-btn active" data-subtab="lesson1">Leçon 1</button>
-                        <button class="sub-btn" data-subtab="lesson3">Leçon 3</button>
-                    </div>
-
-                    <!-- Leçon 1 -->
-                    <div id="lesson1" class="sub-content active">
-                        <h3>Leçon 1 - 自我介紹</h3>
-
-                        <h4>基本招呼語</h4>
-                        <ul>
-                            <li><strong>Bonjour</strong> - 你好（白天）</li>
-                            <li><strong>Bonsoir</strong> - 晚上好</li>
-                            <li><strong>Salut</strong> - 嗨（非正式）</li>
-                            <li><strong>Au revoir</strong> - 再見</li>
-                            <li><strong>À bientôt</strong> - 待會見</li>
-                            <li><strong>Bonne journée</strong> - 祝你有美好的一天</li>
-                            <li><strong>Bonne soirée</strong> - 祝你有美好的夜晚</li>
-                        </ul>
-
-                        <h4 style="margin-top: 30px;">自我介紹句型</h4>
-                        <div class="example-sentence">
-                            <strong>Je m'appelle Yachi.</strong>
-                            <span>我叫 Yachi。</span>
+                    <h3>🎯 être（是）和 avoir（有）的用法</h3>
+                    <div class="grid">
+                        <div>
+                            <h4>être（是）</h4>
+                            <ul>
+                                <li><strong>je suis</strong> - 我是</li>
+                                <li><strong>tu es</strong> - 你是</li>
+                                <li><strong>il/elle est</strong> - 他/她是</li>
+                                <li><strong>nous sommes</strong> - 我們是</li>
+                                <li><strong>vous êtes</strong> - 您是/你們是</li>
+                                <li><strong>ils/elles sont</strong> - 他們/她們是</li>
+                            </ul>
                         </div>
-                        <div class="example-sentence">
-                            <strong>Je suis taiwanaise.</strong>
-                            <span>我是台灣人。</span>
-                        </div>
-                        <div class="example-sentence">
-                            <strong>J'ai 31 ans.</strong>
-                            <span>我31歲。</span>
-                        </div>
-
-                        <h4 style="margin-top: 30px;">範例人物</h4>
-                        <div class="grid">
-                            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
-                                <h4>Roberto</h4>
-                                <p>Je m'appelle Roberto.</p>
-                                <p>Je suis italien.</p>
-                                <p>Je suis étudiant.</p>
-                            </div>
-                            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
-                                <h4>Yoko</h4>
-                                <p>Je m'appelle Yoko.</p>
-                                <p>Je suis japonaise.</p>
-                                <p>Je suis professeur.</p>
-                            </div>
-                            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px;">
-                                <h4>Sven</h4>
-                                <p>Je m'appelle Sven.</p>
-                                <p>Je suis suédois.</p>
-                                <p>Je suis ingénieur.</p>
-                            </div>
+                        <div>
+                            <h4>avoir（有）</h4>
+                            <ul>
+                                <li><strong>j'ai</strong> - 我有</li>
+                                <li><strong>tu as</strong> - 你有</li>
+                                <li><strong>il/elle a</strong> - 他/她有</li>
+                                <li><strong>nous avons</strong> - 我們有</li>
+                                <li><strong>vous avez</strong> - 您有/你們有</li>
+                                <li><strong>ils/elles ont</strong> - 他們/她們有</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <!-- Leçon 3 -->
-                    <div id="lesson3" class="sub-content">
-                        <h3>Leçon 3 - 自我介紹(進階) & 動詞變化</h3>
+                    <h3 style="margin-top: 30px;">📝 例句練習</h3>
+                    <div class="example-sentence">
+                        <strong>Bonjour! Je m'appelle Lisa, je suis Japonaise, j'ai dix-neuf ans. Je suis étudiante,
+                            j'ai un chat et deux lapins.</strong>
+                        <span>你好！我叫Lisa，我是日本人，我19歲。我是學生，我有一隻貓和兩隻兔子。</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>Elle a douze ans, elle est petite, elle a sommeil.</strong>
+                        <span>她12歲，她很小，她很困。</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>Il a vingt ans, il est français, il est grand, il a un vélo.</strong>
+                        <span>他20歲，他是法國人，他很高，他有一輛自行車。</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>Tu as soif? Non, j'ai faim.</strong>
+                        <span>你渴嗎？不，我很餓。</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>Vous avez peur?</strong>
+                        <span>你們都害怕嗎？</span>
+                    </div>
 
-                        <h4>對話練習</h4>
-                        <div class="example-sentence">
-                            <strong>Bonjour, je m'appelle Anna, je suis Canadienne, et vous? Vous êtes?</strong>
-                            <span>您好！我叫 Anna，我是加拿大人，您呢？您是？</span>
+                    <h3 style="margin-top: 30px;">🔢 數字 Chiffres (21-99)</h3>
+                    <div class="grid">
+                        <div>
+                            <h4>特殊數字</h4>
+                            <ul>
+                                <li><strong>21</strong> - vingt et un</li>
+                                <li><strong>31</strong> - trente et un</li>
+                                <li><strong>41</strong> - quarante et un</li>
+                                <li><strong>51</strong> - cinquante et un</li>
+                                <li><strong>61</strong> - soixante et un</li>
+                                <li><strong>71</strong> - soixante et onze (60+11)</li>
+                                <li><strong>81</strong> - quatre-vingt-un</li>
+                                <li><strong>91</strong> - quatre-vingt-onze (80+11)</li>
+                            </ul>
                         </div>
-                        <div class="example-sentence">
-                            <strong>Bonjour! Je m'appelle Yoko, je suis Japonaise, enchantée.</strong>
-                            <span>您好！我是 Yoko，我是日本人，很高興認識您</span>
+                        <div>
+                            <h4>更多例子</h4>
+                            <ul>
+                                <li><strong>72</strong> - soixante-douze</li>
+                                <li><strong>75</strong> - soixante-quinze</li>
+                                <li><strong>89</strong> - quatre-vingt-neuf</li>
+                                <li><strong>93</strong> - quatre-vingt-treize</li>
+                                <li><strong>99</strong> - quatre-vingt-dix-neuf</li>
+                                <li><strong>101</strong> - cent un</li>
+                                <li><strong>1001</strong> - mille un</li>
+                            </ul>
                         </div>
-                        <div class="example-sentence">
-                            <strong>Je m'appelle José, je suis portugais.</strong>
-                            <span>我的名字是 José，我是葡萄牙人</span>
-                        </div>
+                    </div>
 
-                        <h4 style="margin-top: 30px;">閱讀文章 - Roberto Sanchez (23歲，墨西哥人)</h4>
-                        <div
-                            style="background: rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 15px; margin: 20px 0;">
-                            <p style="margin-bottom: 15px;">
-                                <strong>Je suis mexicain, j'ai 23 ans.</strong><br>
-                                我是墨西哥人，我23歲。
-                            </p>
-                            <p style="margin-bottom: 15px;">
-                                <strong>J'étudie le commerce international et, le samedi, j'apprends le chinois dans une
-                                    école de langues.</strong><br>
-                                我學習國際商業，而且星期六我在一所語言學校學習中文。
-                            </p>
-                            <p style="margin-bottom: 15px;">
-                                <strong>Je suis bilingue : je parle espagnol et français.</strong><br>
-                                我是雙語者：我說西班牙文和法文。
-                            </p>
-                            <p>
-                                <strong>Je ne parle pas bien anglais.</strong><br>
-                                我英文說得不好。
-                            </p>
-                        </div>
+                    <h3 style="margin-top: 30px;">📞 電話號碼練習</h3>
+                    <ul>
+                        <li><strong>01 42 84 90 00:</strong> zéro un, quarante-deux, quatre-vingt-quatre,
+                            quatre-vingt-dix, zéro zéro</li>
+                        <li><strong>03 46 49 73 79:</strong> zéro trois, quarante-six, quarante-neuf, soixante-treize,
+                            soixante-dix-neuf</li>
+                        <li><strong>06 19 21 44 94:</strong> zéro six, dix-neuf, vingt et un, quarante-quatre,
+                            quatre-vingt-quatorze</li>
+                    </ul>
 
-                        <h4>重要詞彙</h4>
-                        <div class="grid">
-                            <div>
-                                <ul>
-                                    <li><strong>dans</strong> - 在...裡面</li>
-                                    <li><strong>une école de langues</strong> - 語言學校</li>
-                                    <li><strong>tous les jours</strong> - 每天</li>
-                                    <li><strong>un cours</strong> - 課程</li>
-                                    <li><strong>le matin</strong> - 早上</li>
-                                    <li><strong>le midi</strong> - 中午</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <ul>
-                                    <li><strong>l'après-midi</strong> - 下午</li>
-                                    <li><strong>le soir</strong> - 晚上</li>
-                                    <li><strong>travailler</strong> - 工作(動詞)</li>
-                                    <li><strong>chercher</strong> - 尋找(動詞)</li>
-                                    <li><strong>pour</strong> - 為了</li>
-                                    <li><strong>en + 語言</strong> - 用...語言</li>
-                                </ul>
-                            </div>
+                    <h3 style="margin-top: 30px;">🎵 Chanson - Les Champs-Élysées (香榭麗舍)</h3>
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border-left: 4px solid #f472b6;">
+                        <div class="example-sentence"
+                            style="border-left: none; background: transparent; padding: 5px 0;">
+                            <strong>Je me baladais sur l'avenue</strong>
+                            <span>我在大道上閒逛</span>
                         </div>
-
-                        <h4 style="margin-top: 30px;">📝 第一組動詞變化（-er結尾）</h4>
-                        <div
-                            style="background: rgba(139, 92, 246, 0.1); padding: 20px; border-radius: 15px; margin: 15px 0;">
-                            <h5 style="color: var(--primary);">travailler (工作)</h5>
-                            <table style="width: 100%;">
-                                <tr>
-                                    <td>je travaille</td>
-                                    <td>我工作</td>
-                                </tr>
-                                <tr>
-                                    <td>tu travailles</td>
-                                    <td>你工作</td>
-                                </tr>
-                                <tr>
-                                    <td>il/elle travaille</td>
-                                    <td>他/她工作</td>
-                                </tr>
-                                <tr>
-                                    <td>nous travaillons</td>
-                                    <td>我們工作</td>
-                                </tr>
-                                <tr>
-                                    <td>vous travaillez</td>
-                                    <td>您/你們工作</td>
-                                </tr>
-                                <tr>
-                                    <td>ils/elles travaillent</td>
-                                    <td>他們/她們工作</td>
-                                </tr>
-                            </table>
+                        <div class="example-sentence"
+                            style="border-left: none; background: transparent; padding: 5px 0;">
+                            <strong>Le cœur ouvert à l'inconnu</strong>
+                            <span>懷著對未知敞開的心房</span>
                         </div>
-
-                        <div style="background: rgba(236, 72, 153, 0.1); padding: 20px; border-radius: 15px;">
-                            <h5 style="color: var(--secondary);">étudier (學習)</h5>
-                            <table style="width: 100%;">
-                                <tr>
-                                    <td>j'étudie</td>
-                                    <td>我學習</td>
-                                </tr>
-                                <tr>
-                                    <td>tu étudies</td>
-                                    <td>你學習</td>
-                                </tr>
-                                <tr>
-                                    <td>il/elle étudie</td>
-                                    <td>他/她學習</td>
-                                </tr>
-                                <tr>
-                                    <td>nous étudions</td>
-                                    <td>我們學習</td>
-                                </tr>
-                                <tr>
-                                    <td>vous étudiez</td>
-                                    <td>您/你們學習</td>
-                                </tr>
-                                <tr>
-                                    <td>ils/elles étudient</td>
-                                    <td>他們/她們學習</td>
-                                </tr>
-                            </table>
+                        <div class="example-sentence"
+                            style="border-left: none; background: transparent; padding: 5px 0;">
+                            <strong>J'avais envie de dire bonjour à n'importe qui</strong>
+                            <span>我只想對任何人說聲你好</span>
                         </div>
+                        <div class="example-sentence"
+                            style="border-left: none; background: transparent; padding: 5px 0;">
+                            <strong>N'importe qui, ce fut toi</strong>
+                            <span>恰好那個人，就是你</span>
+                        </div>
+                        <div class="example-sentence"
+                            style="border-left: none; background: transparent; padding: 5px 0;">
+                            <strong>Aux Champs-Élysées, aux Champs-Élysées</strong>
+                            <span>香榭麗舍大道上，香榭麗舍大道上</span>
+                        </div>
+                        <div class="example-sentence"
+                            style="border-left: none; background: transparent; padding: 5px 0;">
+                            <strong>Au soleil, sous la pluie</strong>
+                            <span>無論是陽光燦爛，還是雨絲飄灑</span>
+                        </div>
+                        <div class="example-sentence"
+                            style="border-left: none; background: transparent; padding: 5px 0;">
+                            <strong>À midi ou à minuit</strong>
+                            <span>無論是中午，還是午夜時分</span>
+                        </div>
+                        <div class="example-sentence"
+                            style="border-left: none; background: transparent; padding: 5px 0;">
+                            <strong>Il y a tout ce que vous voulez aux Champs-Élysées</strong>
+                            <span>你想要的任何一切，都在香榭麗舍大道上</span>
+                        </div>
+                    </div>
+                </div>
 
-                        <h4 style="margin-top: 30px;">練習句子</h4>
+                <!-- Leçon 2 -->
+                <div class="card" style="margin-top: 30px;">
+                    <h2>📖 Leçon 2 - 國籍與自我介紹對話</h2>
+
+                    <h3>📞 電話號碼練習 Chiffres</h3>
+                    <ul>
+                        <li><strong>02 45 62 89 41:</strong> zéro deux, quarante-cinq, soixante-deux, quatre-vingt-neuf,
+                            quarante et un</li>
+                        <li><strong>05 17 28 42 72:</strong> zéro cinq, dix-sept, vingt-huit, quarante-deux,
+                            soixante-douze</li>
+                        <li><strong>02 49 34 00 20:</strong> zéro deux, quarante-neuf, trente-quatre, zéro zéro, vingt
+                        </li>
+                        <li><strong>09 05 37 63 74:</strong> zéro neuf, zéro cinq, trente-sept, soixante-trois,
+                            soixante-quatorze</li>
+                        <li><strong>07 15 32 71 81:</strong> zéro sept, quinze, trente-deux, soixante et onze,
+                            quatre-vingt-un</li>
+                    </ul>
+
+                    <h3 style="margin-top: 30px;">🌍 國籍女性形式 Nationalité (féminin)</h3>
+                    <div class="grid">
+                        <div>
+                            <ul>
+                                <li><strong>française</strong> - 法國人（女）</li>
+                                <li><strong>portugaise</strong> - 葡萄牙人（女）</li>
+                                <li><strong>suédoise</strong> - 瑞典人（女）</li>
+                                <li><strong>chinoise</strong> - 中國人（女）</li>
+                                <li><strong>mexicaine</strong> - 墨西哥人（女）</li>
+                                <li><strong>américaine</strong> - 美國人（女）</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><strong>autrichienne</strong> - 奧地利人（女）</li>
+                                <li><strong>canadienne</strong> - 加拿大人（女）</li>
+                                <li><strong>coréenne</strong> - 韓國人（女）</li>
+                                <li><strong>allemande</strong> - 德國人（女）</li>
+                                <li><strong>espagnole</strong> - 西班牙人（女）</li>
+                                <li><strong>russe</strong> - 俄羅斯人（男女同形）</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">📝 國籍用法說明</h3>
+                    <div class="example-sentence">
+                        <strong>1. 國籍用法</strong>
+                        <span>我們是加拿大人: Nous sommes canadien(ne)s.</span>
+                        <span>這是一個德國人: C'est un Allemand. / C'est une Allemande.</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>2. 語言（陽性形式）</strong>
+                        <span>我說法文和西班牙文: Je parle français et espagnol.</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>3. 形容詞（放在名詞後面）</strong>
+                        <span>我有一輛德國車: J'ai une voiture allemande.</span>
+                        <span>他們有兩隻瑞典貓: Ils ont deux chats suédois.</span>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">💬 對話練習</h3>
+                    <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px;">
                         <div class="example-sentence">
-                            <strong>J'apprends le français le mercredi soir sur Internet.</strong>
-                            <span>我每週三晚上在網絡上學習法文。</span>
+                            <strong>- Bonjour, je m'appelle Paul Bouchard. Je suis canadien.</strong>
+                            <span>- 你好，我叫Paul Bouchard。我是加拿大人。</span>
                         </div>
                         <div class="example-sentence">
-                            <strong>Nous ne travaillons pas le week-end.</strong>
-                            <span>我們週末不工作。</span>
+                            <strong>- Natacha Muller, je suis autrichienne. Enchantée!</strong>
+                            <span>- Natacha Muller，我是奧地利人。很高興認識你！</span>
                         </div>
                         <div class="example-sentence">
-                            <strong>Ils ont des cours le jeudi matin.</strong>
-                            <span>他們每週四早上有課。</span>
+                            <strong>- Oh! Vous vous appelez Sofia! Moi aussi! Vous êtes russe?</strong>
+                            <span>- 哦！您叫Sofia！我也是！您是俄羅斯人嗎？</span>
                         </div>
+                        <div class="example-sentence">
+                            <strong>- Ah non! Moi, je suis mexicaine!</strong>
+                            <span>- 不！我是墨西哥人！</span>
+                        </div>
+                        <div class="example-sentence">
+                            <strong>- Qui est-ce? C'est qui?</strong>
+                            <span>- 這是誰？</span>
+                        </div>
+                        <div class="example-sentence">
+                            <strong>- C'est un journaliste. Il s'appelle Karl Rainer. Il est allemand.</strong>
+                            <span>- 這是一位記者。他叫Karl Rainer。他是德國人。</span>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">✍️ 翻譯練習 Traduction</h3>
+                    <div class="example-sentence">
+                        <strong>您好！我叫Anna，我是加拿大人，您呢？您是...?</strong>
+                        <span>Bonjour! Je m'appelle Anna, je suis canadienne. Et vous? Vous êtes....?</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>您好！我是Yoko，我是日本人，很高興認識您</strong>
+                        <span>Bonjour! Je m'appelle Yoko, je suis japonaise. Enchantée!</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>您好！我是奧地利人，這位是Susan，她是英國人</strong>
+                        <span>Bonjour! Je suis autrichien. Voici Susan, elle est anglaise.</span>
+                    </div>
+                    <div class="example-sentence">
+                        <strong>這是一位老師，她是法國人，她叫Caroline，而她的丈夫是韓國人</strong>
+                        <span>C'est une professeur(e), elle est française. Elle s'appelle Caroline. Son mari est
+                            coréen.</span>
                     </div>
                 </div>
             </section>
@@ -925,208 +742,8 @@
             <section id="vocabulary" class="tab-content">
                 <div class="card">
                     <h2>📚 詞彙表 (Vocabulaire)</h2>
-
-                    <!-- 子標籤導航 -->
-                    <div class="sub-nav">
-                        <button class="sub-btn active" data-subtab="vocab-words">常用詞彙</button>
-                        <button class="sub-btn" data-subtab="vocab-numbers">🔢 數字 Chiffres</button>
-                        <button class="sub-btn" data-subtab="vocab-days">📅 星期 Jours</button>
-                    </div>
-
-                    <!-- 常用詞彙 -->
-                    <div id="vocab-words" class="sub-content active">
-                        <p style="color: #a78bfa; margin-bottom: 15px;">點擊單字聽發音</p>
-                        <input type="text" id="vocabSearch" placeholder="🔍 搜尋單字（法文或中文）...">
-                        <div class="vocab-grid" id="vocabList"></div>
-                    </div>
-
-                    <!-- 數字表 -->
-                    <div id="vocab-numbers" class="sub-content">
-                        <h3>🔢 完整數字表 (Chiffres)</h3>
-                        <p style="color: #a78bfa; margin-bottom: 20px;">點擊數字聽發音</p>
-
-                        <table style="width: 100%; text-align: center;">
-                            <tr>
-                                <td onclick="speak('un')" style="cursor: pointer;"><strong>1</strong><br>un</td>
-                                <td onclick="speak('onze')" style="cursor: pointer;"><strong>11</strong><br>onze</td>
-                                <td onclick="speak('vingt et un')" style="cursor: pointer;"><strong>21</strong><br>vingt
-                                    et un</td>
-                                <td onclick="speak('trente et un')" style="cursor: pointer;">
-                                    <strong>31</strong><br>trente et un
-                                </td>
-                            </tr>
-                            <tr>
-                                <td onclick="speak('deux')" style="cursor: pointer;"><strong>2</strong><br>deux</td>
-                                <td onclick="speak('douze')" style="cursor: pointer;"><strong>12</strong><br>douze</td>
-                                <td onclick="speak('vingt-deux')" style="cursor: pointer;">
-                                    <strong>22</strong><br>vingt-deux
-                                </td>
-                                <td onclick="speak('quarante')" style="cursor: pointer;"><strong>40</strong><br>quarante
-                                </td>
-                            </tr>
-                            <tr>
-                                <td onclick="speak('trois')" style="cursor: pointer;"><strong>3</strong><br>trois</td>
-                                <td onclick="speak('treize')" style="cursor: pointer;"><strong>13</strong><br>treize
-                                </td>
-                                <td onclick="speak('vingt-trois')" style="cursor: pointer;">
-                                    <strong>23</strong><br>vingt-trois
-                                </td>
-                                <td onclick="speak('cinquante')" style="cursor: pointer;">
-                                    <strong>50</strong><br>cinquante
-                                </td>
-                            </tr>
-                            <tr>
-                                <td onclick="speak('quatre')" style="cursor: pointer;"><strong>4</strong><br>quatre</td>
-                                <td onclick="speak('quatorze')" style="cursor: pointer;"><strong>14</strong><br>quatorze
-                                </td>
-                                <td onclick="speak('vingt-quatre')" style="cursor: pointer;">
-                                    <strong>24</strong><br>vingt-quatre
-                                </td>
-                                <td onclick="speak('soixante')" style="cursor: pointer;"><strong>60</strong><br>soixante
-                                </td>
-                            </tr>
-                            <tr>
-                                <td onclick="speak('cinq')" style="cursor: pointer;"><strong>5</strong><br>cinq</td>
-                                <td onclick="speak('quinze')" style="cursor: pointer;"><strong>15</strong><br>quinze
-                                </td>
-                                <td onclick="speak('vingt-cinq')" style="cursor: pointer;">
-                                    <strong>25</strong><br>vingt-cinq
-                                </td>
-                                <td onclick="speak('soixante-dix')" style="cursor: pointer;">
-                                    <strong>70</strong><br>soixante-dix
-                                </td>
-                            </tr>
-                            <tr>
-                                <td onclick="speak('six')" style="cursor: pointer;"><strong>6</strong><br>six</td>
-                                <td onclick="speak('seize')" style="cursor: pointer;"><strong>16</strong><br>seize</td>
-                                <td onclick="speak('vingt-six')" style="cursor: pointer;">
-                                    <strong>26</strong><br>vingt-six
-                                </td>
-                                <td onclick="speak('quatre-vingts')" style="cursor: pointer;">
-                                    <strong>80</strong><br>quatre-vingts
-                                </td>
-                            </tr>
-                            <tr>
-                                <td onclick="speak('sept')" style="cursor: pointer;"><strong>7</strong><br>sept</td>
-                                <td onclick="speak('dix-sept')" style="cursor: pointer;"><strong>17</strong><br>dix-sept
-                                </td>
-                                <td onclick="speak('vingt-sept')" style="cursor: pointer;">
-                                    <strong>27</strong><br>vingt-sept
-                                </td>
-                                <td onclick="speak('quatre-vingt-dix')" style="cursor: pointer;">
-                                    <strong>90</strong><br>quatre-vingt-dix
-                                </td>
-                            </tr>
-                            <tr>
-                                <td onclick="speak('huit')" style="cursor: pointer;"><strong>8</strong><br>huit</td>
-                                <td onclick="speak('dix-huit')" style="cursor: pointer;"><strong>18</strong><br>dix-huit
-                                </td>
-                                <td onclick="speak('vingt-huit')" style="cursor: pointer;">
-                                    <strong>28</strong><br>vingt-huit
-                                </td>
-                                <td onclick="speak('cent')" style="cursor: pointer;"><strong>100</strong><br>cent</td>
-                            </tr>
-                            <tr>
-                                <td onclick="speak('neuf')" style="cursor: pointer;"><strong>9</strong><br>neuf</td>
-                                <td onclick="speak('dix-neuf')" style="cursor: pointer;"><strong>19</strong><br>dix-neuf
-                                </td>
-                                <td onclick="speak('vingt-neuf')" style="cursor: pointer;">
-                                    <strong>29</strong><br>vingt-neuf
-                                </td>
-                                <td onclick="speak('mille')" style="cursor: pointer;"><strong>1000</strong><br>mille
-                                </td>
-                            </tr>
-                            <tr>
-                                <td onclick="speak('dix')" style="cursor: pointer;"><strong>10</strong><br>dix</td>
-                                <td onclick="speak('vingt')" style="cursor: pointer;"><strong>20</strong><br>vingt</td>
-                                <td onclick="speak('trente')" style="cursor: pointer;"><strong>30</strong><br>trente
-                                </td>
-                                <td onclick="speak('un million')" style="cursor: pointer;">
-                                    <strong>1,000,000</strong><br>un million
-                                </td>
-                            </tr>
-                        </table>
-
-                        <h3 style="margin-top: 40px;">📐 數字規則說明</h3>
-
-                        <div class="example-sentence">
-                            <strong>21, 31, 41, 51, 61:</strong> 用 "et" 連接<br>
-                            <span>• 21: vingt <u>et</u> un</span><br>
-                            <span>• 31: trente <u>et</u> un</span><br>
-                            <span>• 41: quarante <u>et</u> un</span>
-                        </div>
-
-                        <div class="example-sentence">
-                            <strong>71-79:</strong> soixante + (11-19)<br>
-                            <span>• 71: soixante <u>et</u> onze (60+11)</span><br>
-                            <span>• 72: soixante-douze (60+12)</span>
-                        </div>
-
-                        <div class="example-sentence">
-                            <strong>81-99:</strong> quatre-vingt(s) + 數字<br>
-                            <span>• 81: quatre-vingt-un (4×20+1)</span><br>
-                            <span>• 91: quatre-vingt-onze (4×20+11)</span><br>
-                            <span>• 101: cent un</span><br>
-                            <span>• 1001: mille un</span>
-                        </div>
-                    </div>
-
-                    <!-- 星期表 -->
-                    <div id="vocab-days" class="sub-content">
-                        <h3>📅 星期 (Jours de la semaine)</h3>
-                        <p style="color: #a78bfa; margin-bottom: 20px;">點擊星期聽發音</p>
-
-                        <div class="nationality-grid">
-                            <div class="nationality-card" onclick="speak('lundi')">
-                                <div class="nationality-flag">1️⃣</div>
-                                <div class="nationality-french">lundi</div>
-                                <div class="nationality-chinese">星期一</div>
-                            </div>
-
-                            <div class="nationality-card" onclick="speak('mardi')">
-                                <div class="nationality-flag">2️⃣</div>
-                                <div class="nationality-french">mardi</div>
-                                <div class="nationality-chinese">星期二</div>
-                            </div>
-
-                            <div class="nationality-card" onclick="speak('mercredi')">
-                                <div class="nationality-flag">3️⃣</div>
-                                <div class="nationality-french">mercredi</div>
-                                <div class="nationality-chinese">星期三</div>
-                            </div>
-
-                            <div class="nationality-card" onclick="speak('jeudi')">
-                                <div class="nationality-flag">4️⃣</div>
-                                <div class="nationality-french">jeudi</div>
-                                <div class="nationality-chinese">星期四</div>
-                            </div>
-
-                            <div class="nationality-card" onclick="speak('vendredi')">
-                                <div class="nationality-flag">5️⃣</div>
-                                <div class="nationality-french">vendredi</div>
-                                <div class="nationality-chinese">星期五</div>
-                            </div>
-
-                            <div class="nationality-card" onclick="speak('samedi')">
-                                <div class="nationality-flag">6️⃣</div>
-                                <div class="nationality-french">samedi</div>
-                                <div class="nationality-chinese">星期六</div>
-                            </div>
-
-                            <div class="nationality-card" onclick="speak('dimanche')">
-                                <div class="nationality-flag">7️⃣</div>
-                                <div class="nationality-french">dimanche</div>
-                                <div class="nationality-chinese">星期日</div>
-                            </div>
-                        </div>
-
-                        <div class="example-sentence" style="margin-top: 30px;">
-                            <strong>💡 提示：</strong><br>
-                            <span>• 法文的星期不需要大寫（除非在句首）</span><br>
-                            <span>• lundi 來自拉丁文「月亮之日」</span><br>
-                            <span>• dimanche 來自拉丁文「主日」</span>
-                        </div>
-                    </div>
+                    <input type="text" id="vocabSearch" placeholder="🔍 搜尋單字（法文或中文）...">
+                    <div class="vocab-grid" id="vocabList"></div>
                 </div>
             </section>
 
@@ -1191,277 +808,6 @@
                                 <td>他們/她們有</td>
                             </tr>
                         </table>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 國籍表 -->
-            <section id="nationality" class="tab-content">
-                <div class="card">
-                    <h2>🌍 國籍表 (Nationalité)</h2>
-                    <p style="color: #a78bfa; margin-bottom: 20px;">點擊卡片聽發音</p>
-
-                    <div class="nationality-grid">
-                        <div class="nationality-card" onclick="speak('suédois')">
-                            <span class="nationality-flag">🇸🇪</span>
-                            <span class="nationality-french">suédois</span>
-                            <span class="nationality-chinese">瑞典人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('canadien')">
-                            <span class="nationality-flag">🇨🇦</span>
-                            <span class="nationality-french">canadien</span>
-                            <span class="nationality-chinese">加拿大人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('allemand')">
-                            <span class="nationality-flag">🇩🇪</span>
-                            <span class="nationality-french">allemand</span>
-                            <span class="nationality-chinese">德國人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('américain')">
-                            <span class="nationality-flag">🇺🇸</span>
-                            <span class="nationality-french">américain</span>
-                            <span class="nationality-chinese">美國人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('français')">
-                            <span class="nationality-flag">🇫🇷</span>
-                            <span class="nationality-french">français</span>
-                            <span class="nationality-chinese">法國人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('japonais')">
-                            <span class="nationality-flag">🇯🇵</span>
-                            <span class="nationality-french">japonais</span>
-                            <span class="nationality-chinese">日本人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('chinois')">
-                            <span class="nationality-flag">🇨🇳</span>
-                            <span class="nationality-french">chinois</span>
-                            <span class="nationality-chinese">中國人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('italien')">
-                            <span class="nationality-flag">🇮🇹</span>
-                            <span class="nationality-french">italien</span>
-                            <span class="nationality-chinese">義大利人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('espagnol')">
-                            <span class="nationality-flag">🇪🇸</span>
-                            <span class="nationality-french">espagnol</span>
-                            <span class="nationality-chinese">西班牙人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('anglais')">
-                            <span class="nationality-flag">🇬🇧</span>
-                            <span class="nationality-french">anglais</span>
-                            <span class="nationality-chinese">英國人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('coréen')">
-                            <span class="nationality-flag">🇰🇷</span>
-                            <span class="nationality-french">coréen</span>
-                            <span class="nationality-chinese">韓國人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('taiwanais')">
-                            <span class="nationality-flag">🇹🇼</span>
-                            <span class="nationality-french">taiwanais</span>
-                            <span class="nationality-chinese">台灣人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('autrichien')">
-                            <span class="nationality-flag">🇦🇹</span>
-                            <span class="nationality-french">autrichien</span>
-                            <span class="nationality-chinese">奧地利人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('marocain')">
-                            <span class="nationality-flag">🇲🇦</span>
-                            <span class="nationality-french">marocain</span>
-                            <span class="nationality-chinese">摩洛哥人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('portugais')">
-                            <span class="nationality-flag">🇵🇹</span>
-                            <span class="nationality-french">portugais</span>
-                            <span class="nationality-chinese">葡萄牙人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('mexicain')">
-                            <span class="nationality-flag">🇲🇽</span>
-                            <span class="nationality-french">mexicain</span>
-                            <span class="nationality-chinese">墨西哥人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('polonais')">
-                            <span class="nationality-flag">🇵🇱</span>
-                            <span class="nationality-french">polonais</span>
-                            <span class="nationality-chinese">波蘭人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('grec')">
-                            <span class="nationality-flag">🇬🇷</span>
-                            <span class="nationality-french">grec</span>
-                            <span class="nationality-chinese">希臘人</span>
-                        </div>
-
-                        <div class="nationality-card" onclick="speak('russe')">
-                            <span class="nationality-flag">🇷🇺</span>
-                            <span class="nationality-french">russe</span>
-                            <span class="nationality-chinese">俄羅斯人</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 歌曲 -->
-            <section id="songs" class="tab-content">
-                <div class="card">
-                    <div class="song-title">
-                        <h3>🎵 Les Champs-Élysées</h3>
-                        <p>Joe Dassin | 點擊歌詞顯示翻譯與發音</p>
-                    </div>
-
-                    <div class="lyrics-container">
-                        <div class="lyric-line" onclick="toggleLyric(this)">
-                            <div class="lyric-french">
-                                <span class="word" onclick="event.stopPropagation(); speak('Je')">Je<span
-                                        class="word-translation">我</span></span>
-                                <span class="word" onclick="event.stopPropagation(); speak('me')">me<span
-                                        class="word-translation">（自己）</span></span>
-                                <span class="word" onclick="event.stopPropagation(); speak('baladais')">baladais<span
-                                        class="word-translation">散步</span></span>
-                                <span class="word" onclick="event.stopPropagation(); speak('sur')">sur<span
-                                        class="word-translation">在...上</span></span>
-                                <span class="word" onclick="event.stopPropagation(); speak('avenue')">l'avenue,<span
-                                        class="word-translation">大道</span></span>
-                                <span class="word" onclick="event.stopPropagation(); speak('le')">le<span
-                                        class="word-translation">（定冠詞）</span></span>
-                                <span class="word" onclick="event.stopPropagation(); speak('cœur')">cœur<span
-                                        class="word-translation">心</span></span>
-                                <span class="word" onclick="event.stopPropagation(); speak('ouvert')">ouvert<span
-                                        class="word-translation">開放的</span></span>
-                                <span class="word" onclick="event.stopPropagation(); speak('à')">à<span
-                                        class="word-translation">對於</span></span>
-                                <span class="word" onclick="event.stopPropagation(); speak('inconnu')">l'inconnu<span
-                                        class="word-translation">未知</span></span>
-                            </div>
-                            <div class="lyric-chinese">我在大道上散步，心對未知開放</div>
-                        </div>
-
-                        <div class="lyric-line" onclick="toggleLyric(this)">
-                            <div class="lyric-french">
-                                <span class="word" onclick="event.stopPropagation(); speak('avais')">J'avais<span
-                                        class="word-translation">我有（過去式）</span></span>
-                                <span class="word" onclick="event.stopPropagation(); speak('envie')">envie<span
-                                        class="word-translation">渴望</span></span>
-                                <span class="word" onclick="event.stopPropagation(); speak('de')">de<span
-                                        class="word-translation">去</span></span>
-                                <span class="word" onclick="event.stopPropagation(); speak('dire')">dire<span
-                                        class="word-translation">說</span></span>
-                                <span class="word" onclick="event.stopPropagation(); speak('bonjour')">bonjour<span
-                                        class="word-translation">你好</span></span>
-                                <span class="word" onclick="event.stopPropagation(); speak('à')">à<span
-                                        class="word-translation">對</span></span>
-                                <span class="word" onclick="event.stopPropagation(); speak('importe qui')">n'importe
-                                    qui<span class="word-translation">任何人</span></span>
-                            </div>
-                            <div class="lyric-chinese">我渴望對任何人說聲你好</div>
-                        </div>
-
-                        <div class="lyric-line"
-                            onclick="toggleLyric(this); speak('N importe qui et ce fut toi je t ai dit n importe quoi')">
-                            <div class="lyric-french">N'importe qui et ce fut toi, je t'ai dit n'importe quoi</div>
-                            <div class="lyric-chinese">不論是誰，而那個人就是你，我隨便說了些話</div>
-                        </div>
-
-                        <div class="lyric-line"
-                            onclick="toggleLyric(this); speak('Il suffisait de te parler pour t apprivoiser')">
-                            <div class="lyric-french">Il suffisait de te parler, pour t'apprivoiser</div>
-                            <div class="lyric-chinese">只要和你說說話，就能馴服你</div>
-                        </div>
-
-                        <div class="lyric-line" onclick="toggleLyric(this)">
-                            <div class="lyric-french">
-                                <span class="word" onclick="event.stopPropagation(); speak('Aux')">Aux<span
-                                        class="word-translation">在（複數）</span></span>
-                                <span class="word"
-                                    onclick="event.stopPropagation(); speak('Champs Élysées')">Champs-Élysées,<span
-                                        class="word-translation">香榭麗舍</span></span>
-                                <span class="word" onclick="event.stopPropagation(); speak('aux')">aux<span
-                                        class="word-translation">在（複數）</span></span>
-                                <span class="word"
-                                    onclick="event.stopPropagation(); speak('Champs Élysées')">Champs-Élysées<span
-                                        class="word-translation">香榭麗舍</span></span>
-                            </div>
-                            <div class="lyric-chinese">在香榭麗舍，在香榭麗舍</div>
-                        </div>
-
-                        <div class="lyric-line"
-                            onclick="toggleLyric(this); speak('Au soleil sous la pluie à midi ou à minuit')">
-                            <div class="lyric-french">Au soleil, sous la pluie, à midi ou à minuit</div>
-                            <div class="lyric-chinese">在陽光下，在雨中，在中午或在午夜</div>
-                        </div>
-
-                        <div class="lyric-line"
-                            onclick="toggleLyric(this); speak('Il y a tout ce que vous voulez aux Champs Élysées')">
-                            <div class="lyric-french">Il y a tout ce que vous voulez aux Champs-Élysées</div>
-                            <div class="lyric-chinese">香榭麗舍總有你想要的一切</div>
-                        </div>
-
-                        <div class="lyric-line"
-                            onclick="toggleLyric(this); speak('Tu m as dit J ai rendez vous dans un sous sol avec des fous')">
-                            <div class="lyric-french">Tu m'as dit "J'ai rendez-vous dans un sous-sol avec des fous"
-                            </div>
-                            <div class="lyric-chinese">你對我說：「我跟幾個在地下室的瘋子有約」</div>
-                        </div>
-
-                        <div class="lyric-line"
-                            onclick="toggleLyric(this); speak('Qui vivent la guitare à la main du soir au matin')">
-                            <div class="lyric-french">Qui vivent la guitare à la main, du soir au matin</div>
-                            <div class="lyric-chinese">他們靠著手上的吉他過活，從夜晚到白天</div>
-                        </div>
-
-                        <div class="lyric-line"
-                            onclick="toggleLyric(this); speak('Alors je t ai accompagnée on a chanté on a dansé')">
-                            <div class="lyric-french">Alors je t'ai accompagnée, on a chanté, on a dansé</div>
-                            <div class="lyric-chinese">於是我陪你去了，我們一起唱歌，一起跳舞</div>
-                        </div>
-
-                        <div class="lyric-line"
-                            onclick="toggleLyric(this); speak('Et l on n a même pas pensé à s embrasser')">
-                            <div class="lyric-french">Et l'on n'a même pas pensé à s'embrasser</div>
-                            <div class="lyric-chinese">卻甚至沒有想到親吻</div>
-                        </div>
-
-                        <div class="lyric-line"
-                            onclick="toggleLyric(this); speak('Hier soir deux inconnus et ce matin sur l avenue')">
-                            <div class="lyric-french">Hier soir deux inconnus et ce matin sur l'avenue</div>
-                            <div class="lyric-chinese">昨夜兩個陌生人，今早一起走在大道上</div>
-                        </div>
-
-                        <div class="lyric-line"
-                            onclick="toggleLyric(this); speak('Deux amoureux tout étourdis par la longue nuit')">
-                            <div class="lyric-french">Deux amoureux tout étourdis par la longue nuit</div>
-                            <div class="lyric-chinese">兩個戀人被漫長的夜晚搞得暈頭轉向</div>
-                        </div>
-
-                        <div class="lyric-line"
-                            onclick="toggleLyric(this); speak('Et de l Étoile à la Concorde un orchestre à mille cordes')">
-                            <div class="lyric-french">Et de l'Étoile à la Concorde, un orchestre à mille cordes</div>
-                            <div class="lyric-chinese">從凱旋門到協和廣場，千弦合奏</div>
-                        </div>
-
-                        <div class="lyric-line"
-                            onclick="toggleLyric(this); speak('Tous les oiseaux du point du jour chantent l amour')">
-                            <div class="lyric-french">Tous les oiseaux du point du jour chantent l'amour</div>
-                            <div class="lyric-chinese">所有黎明的鳥兒歌頌著愛情</div>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -1545,40 +891,29 @@
             { fr: "dix-huit", zh: "18 (數字)" },
             { fr: "dix-neuf", zh: "19 (數字)" },
             { fr: "vingt", zh: "20 (數字)" },
+            // 時間 - 星期
+            { fr: "lundi", zh: "星期一 (時間)" },
+            { fr: "mardi", zh: "星期二 (時間)" },
+            { fr: "mercredi", zh: "星期三 (時間)" },
+            { fr: "jeudi", zh: "星期四 (時間)" },
+            { fr: "vendredi", zh: "星期五 (時間)" },
+            { fr: "samedi", zh: "星期六 (時間)" },
+            { fr: "dimanche", zh: "星期日 (時間)" },
+            // 時間 - 一天的時段
+            { fr: "le matin", zh: "早上 (時間)" },
+            { fr: "le midi", zh: "中午 (時間)" },
+            { fr: "l'après-midi", zh: "下午 (時間)" },
+            { fr: "le soir", zh: "傍晚/晚上 (時間)" },
+            { fr: "la nuit", zh: "夜晚 (時間)" },
+            { fr: "minuit", zh: "午夜 (時間)" },
+            { fr: "ce matin", zh: "今天早上 (時間)" },
+            { fr: "ce soir", zh: "今天晚上 (時間)" },
+            { fr: "hier soir", zh: "昨晚 (時間)" },
+            // 更多時間相關詞彙
+            { fr: "aujourd'hui", zh: "今天 (時間)" },
+            { fr: "demain", zh: "明天 (時間)" },
+            { fr: "hier", zh: "昨天 (時間)" },
         ];
-
-        // 語音合成發音功能
-        function speak(text) {
-            window.speechSynthesis.cancel();
-
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'fr-FR';
-            utterance.rate = 0.8;
-
-            const voices = window.speechSynthesis.getVoices();
-            const frenchVoice = voices.find(v => v.lang.startsWith('fr'));
-            if (frenchVoice) {
-                utterance.voice = frenchVoice;
-            }
-
-            const element = event.currentTarget || event.target;
-            if (element && element.classList) {
-                element.classList.add('speaking');
-                utterance.onend = () => element.classList.remove('speaking');
-            }
-
-            window.speechSynthesis.speak(utterance);
-        }
-
-        // 確保語音列表已載入
-        if (window.speechSynthesis.onvoiceschanged !== undefined) {
-            window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
-        }
-
-        // 歌詞點擊切換翻譯
-        function toggleLyric(element) {
-            element.classList.toggle('active');
-        }
 
         // Tab切換
         document.querySelectorAll('.nav-btn').forEach(btn => {
@@ -1590,22 +925,12 @@
             });
         });
 
-        // 子Tab切換
-        document.querySelectorAll('.sub-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.sub-btn').forEach(b => b.classList.remove('active'));
-                document.querySelectorAll('.sub-content').forEach(c => c.classList.remove('active'));
-                btn.classList.add('active');
-                document.getElementById(btn.dataset.subtab).classList.add('active');
-            });
-        });
-
         // 詞彙表渲染
         const vocabList = document.getElementById('vocabList');
         const renderVocab = (filter = '') => {
             vocabList.innerHTML = vocabulary
                 .filter(item => item.fr.toLowerCase().includes(filter.toLowerCase()) || item.zh.includes(filter))
-                .map(item => `<div class="vocab-item" onclick="speak('${item.fr}')"><strong>${item.fr}</strong><br>${item.zh}</div>`)
+                .map(item => `<div class="vocab-item"><strong>${item.fr}</strong><br>${item.zh}</div>`)
                 .join('');
         };
         renderVocab();
