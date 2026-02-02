@@ -1753,33 +1753,100 @@
             { fr: "vingt", zh: "20 (數字)" },
         ];
 
-        // 語音合成發音功能
+        // 語音合成發音功能 - 優化跨平台品質
+        let cachedFrenchVoice = null;
+
+        function getBestFrenchVoice() {
+            if (cachedFrenchVoice) return cachedFrenchVoice;
+
+            const voices = window.speechSynthesis.getVoices();
+            const frenchVoices = voices.filter(v => v.lang.startsWith('fr'));
+
+            if (frenchVoices.length === 0) return null;
+
+            // 優先順序：高品質語音 > 本地語音 > 任何法語語音
+            // 優先選擇知名的高品質語音
+            const preferredNames = [
+                'Google français',
+                'Microsoft Paul',
+                'Microsoft Hortense',
+                'Thomas',
+                'Amelie',
+                'Audrey',
+                'Aurelie',
+                'fr-FR',
+                'French'
+            ];
+
+            // 首先嘗試找本地語音（通常品質較好）
+            let bestVoice = frenchVoices.find(v => v.localService === true);
+
+            // 然後嘗試按優先順序找語音
+            if (!bestVoice) {
+                for (const name of preferredNames) {
+                    bestVoice = frenchVoices.find(v =>
+                        v.name.includes(name) || v.voiceURI.includes(name)
+                    );
+                    if (bestVoice) break;
+                }
+            }
+
+            // 如果還是沒找到，使用第一個法語語音
+            if (!bestVoice) {
+                bestVoice = frenchVoices[0];
+            }
+
+            cachedFrenchVoice = bestVoice;
+            console.log('Selected French voice:', bestVoice ? bestVoice.name : 'None');
+            return bestVoice;
+        }
+
         function speak(text) {
             window.speechSynthesis.cancel();
 
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = 'fr-FR';
-            utterance.rate = 0.8;
 
-            const voices = window.speechSynthesis.getVoices();
-            const frenchVoice = voices.find(v => v.lang.startsWith('fr'));
+            // 偵測行動裝置
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+            // 針對行動裝置調整參數以提高清晰度
+            if (isMobile) {
+                utterance.rate = 0.75;  // 稍慢一點
+                utterance.pitch = 1.05; // 稍微提高音調增加清晰度
+                utterance.volume = 1.0;
+            } else {
+                utterance.rate = 0.8;
+                utterance.pitch = 1.0;
+                utterance.volume = 1.0;
+            }
+
+            const frenchVoice = getBestFrenchVoice();
             if (frenchVoice) {
                 utterance.voice = frenchVoice;
             }
 
-            const element = event.currentTarget || event.target;
+            const element = event && (event.currentTarget || event.target);
             if (element && element.classList) {
                 element.classList.add('speaking');
                 utterance.onend = () => element.classList.remove('speaking');
+                utterance.onerror = () => element.classList.remove('speaking');
             }
 
             window.speechSynthesis.speak(utterance);
         }
 
         // 確保語音列表已載入
-        if (window.speechSynthesis.onvoiceschanged !== undefined) {
-            window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+        function loadVoices() {
+            cachedFrenchVoice = null; // 重置快取
+            getBestFrenchVoice();
         }
+
+        if (window.speechSynthesis.onvoiceschanged !== undefined) {
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+        }
+        // 延遲載入語音（某些瀏覽器需要）
+        setTimeout(loadVoices, 100);
 
         // 歌詞點擊切換翻譯
         function toggleLyric(element) {
