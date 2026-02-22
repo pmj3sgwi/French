@@ -1533,6 +1533,7 @@ quatre-vingt-onze.</span>
                         <button class="sub-btn active" data-subtab="vocab-words">常用詞彙</button>
                         <button class="sub-btn" data-subtab="vocab-numbers">🔢 數字 Chiffres</button>
                         <button class="sub-btn" data-subtab="vocab-days">🕐 時間 Temps</button>
+                        <button class="sub-btn" data-subtab="vocab-avoir">💛 感受 Avoir</button>
                     </div>
 
                     <!-- 常用詞彙 -->
@@ -1806,6 +1807,91 @@ quatre-vingt-onze.</span>
                                 <div class="nationality-flag">🌙</div>
                                 <div class="nationality-french">hier soir</div>
                                 <div class="nationality-chinese">昨晚</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 七種感受 Avoir -->
+                    <div id="vocab-avoir" class="sub-content">
+                        <h3>💛 七種感受 (Avoir expressions)</h3>
+                        <p style="color: #a78bfa; margin-bottom: 20px;">法文用 <strong>avoir</strong>（有）來表達身體感受，而不是用 être（是）。點擊卡片聽發音。</p>
+
+                        <div class="nationality-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+
+                            <div class="nationality-card" onclick="speak('j ai chaud')">
+                                <div class="nationality-flag">🌡️</div>
+                                <div class="nationality-french">avoir chaud</div>
+                                <div class="nationality-chinese">熱</div>
+                                <div style="margin-top: 10px; font-size: 0.85rem; color: #a78bfa;">J'ai chaud.</div>
+                            </div>
+
+                            <div class="nationality-card" onclick="speak('tu as froid')">
+                                <div class="nationality-flag">🧊</div>
+                                <div class="nationality-french">avoir froid</div>
+                                <div class="nationality-chinese">冷</div>
+                                <div style="margin-top: 10px; font-size: 0.85rem; color: #a78bfa;">Tu as froid?</div>
+                            </div>
+
+                            <div class="nationality-card" onclick="speak('il a faim')">
+                                <div class="nationality-flag">🍽️</div>
+                                <div class="nationality-french">avoir faim</div>
+                                <div class="nationality-chinese">餓</div>
+                                <div style="margin-top: 10px; font-size: 0.85rem; color: #a78bfa;">Il a faim.</div>
+                            </div>
+
+                            <div class="nationality-card" onclick="speak('elle a soif')">
+                                <div class="nationality-flag">💧</div>
+                                <div class="nationality-french">avoir soif</div>
+                                <div class="nationality-chinese">渴</div>
+                                <div style="margin-top: 10px; font-size: 0.85rem; color: #a78bfa;">Elle a soif.</div>
+                            </div>
+
+                            <div class="nationality-card" onclick="speak('nous avons mal')">
+                                <div class="nationality-flag">🤕</div>
+                                <div class="nationality-french">avoir mal</div>
+                                <div class="nationality-chinese">疼痛</div>
+                                <div style="margin-top: 10px; font-size: 0.85rem; color: #a78bfa;">Nous avons mal.</div>
+                            </div>
+
+                            <div class="nationality-card" onclick="speak('tu as peur')">
+                                <div class="nationality-flag">😨</div>
+                                <div class="nationality-french">avoir peur</div>
+                                <div class="nationality-chinese">害怕</div>
+                                <div style="margin-top: 10px; font-size: 0.85rem; color: #a78bfa;">Tu as peur?</div>
+                            </div>
+
+                            <div class="nationality-card" onclick="speak('vous avez sommeil')">
+                                <div class="nationality-flag">😴</div>
+                                <div class="nationality-french">avoir sommeil</div>
+                                <div class="nationality-chinese">想睡/困</div>
+                                <div style="margin-top: 10px; font-size: 0.85rem; color: #a78bfa;">Vous avez sommeil?</div>
+                            </div>
+
+                        </div>
+
+                        <div class="example-sentence" style="margin-top: 40px; background: rgba(139, 92, 246, 0.1);">
+                            <strong>⚠️ 注意：法文感受用 avoir（有），不用 être（是）！</strong><br>
+                            <span>✅ J'ai chaud. (我熱。) &nbsp;❌ <s>Je suis chaud.</s></span><br>
+                            <span>✅ Tu as faim? (你餓嗎？) &nbsp;❌ <s>Tu es faim?</s></span>
+                        </div>
+
+                        <h4 style="margin-top: 40px;">💬 對話練習</h4>
+                        <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px;">
+                            <div class="example-sentence" onclick="speak('tu as soif non j ai faim')" style="cursor:pointer;">
+                                <strong>— Tu as soif?</strong>
+                                <span>你渴嗎？</span>
+                                <strong>— Non, j'ai faim.</strong>
+                                <span>不，我餓。</span>
+                            </div>
+                            <div class="example-sentence" onclick="speak('vous avez sommeil oui nous avons sommeil')" style="cursor:pointer;">
+                                <strong>— Vous avez sommeil?</strong>
+                                <span>你們想睡嗎？</span>
+                                <strong>— Oui, nous avons sommeil.</strong>
+                                <span>是的，我們想睡。</span>
+                            </div>
+                            <div class="example-sentence">
+                                <strong>Elle a douze ans, elle est petite, elle a sommeil.</strong>
+                                <span>她12歲，她很小，她很困。</span>
                             </div>
                         </div>
                     </div>
